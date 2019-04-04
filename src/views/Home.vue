@@ -2,7 +2,6 @@
   <span>
     <HomeJA></HomeJA>
     <AboutJA/>
-    <home-plans></home-plans>
   </span> 
 </template>
 

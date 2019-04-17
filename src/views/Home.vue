@@ -1,8 +1,8 @@
 <template>
-  <span>
-    <HomeJA></HomeJA>
+  <v-app dark>
+    <HomeJA/>
     <AboutJA/>
-  </span> 
+  </v-app> 
 </template>
 
 <script>
@@ -17,7 +17,7 @@ import AboutJA from '@/components/AboutJA.vue';
     components: {
       HomeJA,
       //HomeDetails,
-      AboutJA,
+      AboutJA
       //HomePlans
     }
   }

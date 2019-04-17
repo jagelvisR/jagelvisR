@@ -1,5 +1,5 @@
 <template>
-    <span>
+    <section>
         <v-navigation-drawer app v-model="drawer" class="grey darken-4" dark disable-resize-watcher>
             <v-list>
                 <template v-for="(item, index) in items">
@@ -15,7 +15,7 @@
                 </template>
             </v-list>
         </v-navigation-drawer>
-        <v-toolbar app color="grey darken-4" dark>
+        <v-toolbar app color="grey darken-4" dark class="white">
             <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon>
             <v-toolbar-title>{{appTitle}}</v-toolbar-title>
             <v-spacer class="hidden-md-and-up"></v-spacer>
@@ -24,9 +24,9 @@
             <v-btn flat class="hidden-sm-and-down">About</v-btn>
             <v-btn flat class="hidden-sm-and-down">Services</v-btn>
             <v-btn flat class="hidden-sm-and-down">Portfolio</v-btn>
-            <v-btn color="red darken-3" class="hidden-sm-and-down">Contact Us</v-btn>
+            <v-btn color="red darken-3" class="hidden-sm-and-down">Contact Me</v-btn>
         </v-toolbar>
-    </span>
+    </section>
 </template>
 
 <script>

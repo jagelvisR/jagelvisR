@@ -6,6 +6,16 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+//import 'material-design-icons-iconfont/dist/material-design-icons.css'
+
+//import '@mdi/font/css/materialdesignicons.css';
+
+import Vuetify from 'vuetify/lib';
+
+
+import 'font-awesome/css/font-awesome.min.css'
+
+
 Vue.config.productionTip = false
 
 new Vue({
@@ -13,3 +23,7 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
+
+Vue.use(Vuetify,{
+  iconfont: 'fa'
+});

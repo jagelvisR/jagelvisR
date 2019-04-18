@@ -2,6 +2,7 @@
   <v-app dark>
     <HomeJA/>
     <AboutJA/>
+    <ServicesJA/>
   </v-app> 
 </template>
 
@@ -9,6 +10,7 @@
 
 import HomeJA from '@/components/HomeJA.vue';
 import AboutJA from '@/components/AboutJA.vue';
+import ServicesJA from '@/components/ServicesJA.vue';
 //import HomeDetails from '@/components/HomeDetails';
 //import HomePlans from '@/components/HomePlans';
 
@@ -17,8 +19,9 @@ import AboutJA from '@/components/AboutJA.vue';
     components: {
       HomeJA,
       //HomeDetails,
-      AboutJA
+      AboutJA,
       //HomePlans
+      ServicesJA
     }
   }
 </script>

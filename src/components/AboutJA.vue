@@ -1,11 +1,13 @@
 <template>
- <section>
+ <section id="AboutMe">
    <vContainer fluid>
+     <!-- About ME-->
+    <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-2">About Me</h1>
+      <!-- About descripcion-->
      <v-layout row wrap>
-       <v-flex xs9>
+       <v-flex xs5>
          <v-card tile flat color="red darken-4">
            <v-card-text>
-             <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-2">About Me</h1>
              <br>
              <p>
                 Soy José Agelvis Desarrollador Web Freelance de Caracas, Venezuela. Estudiante de VIII Semestre 
@@ -16,6 +18,11 @@
              </p>
            </v-card-text>
          </v-card>
+       </v-flex>
+    
+      <!-- Habilidades -->
+     
+       <v-flex xs7>
          <v-card tile flat color="white" class="black--text">
            <v-card-text>
             <h2 class="font-weight-red darken-4--text text-xs-center mb-2 mt-2">Habilidades</h2>
@@ -65,11 +72,6 @@
                 </v-progress-circular>
               </div>
            </v-card-text>
-         </v-card>
-       </v-flex> 
-        <v-flex xs3>
-         <v-card tile flat>
-             <img src="@/assets/jagelvisR.jpeg" alt="jagelvisr" width="320" height="426">
          </v-card>
        </v-flex>
      </v-layout>

@@ -46,14 +46,23 @@
             </v-layout>
         </v-container>
         <v-container grid-list-md text-xs-center>
-            <v-btn 
-        justify-center 
-        align="center" 
-        fab
-        wrap
-        class="red darken-4 mt-5">
-            <v-icon large color="white" size="50px">expand</v-icon>
-        </v-btn>
+            <scrollactive 
+            class="my-nav " 
+            active-class="active"
+            :offset="80"
+            :duration="900"
+            bezier-easing-value=".5,0,.35,1">    
+                <v-btn 
+                justify-center 
+                align="center" 
+                fab
+                wrap
+                class="red darken-4 mt-5 scrollactive-item"
+                to="#AboutMe"
+                >
+                    <v-icon large color="white" size="50px">expand</v-icon>
+                </v-btn>
+            </scrollactive>    
         </v-container>
     </v-parallax>
     </section>
@@ -72,7 +81,8 @@ export default {
             {perfil:'fa-github', url: 'https://github.com/jagelvisR'},
             {perfil:'fa-gitlab', url: 'https://gitlab.com/jagelvisR'},
             {perfil:'fa-linkedin', url: 'https://www.linkedin.com/in/jos%C3%A9-agelvis-34a6aa158/'},
-            ],        
+            ],
+                  
     }),
     computed: {
       avatarSize () {
@@ -83,7 +93,8 @@ export default {
     methods: {
         abrirURL(url) {
             return window.open(url);
-        }
+        },
+
     }
     
 };

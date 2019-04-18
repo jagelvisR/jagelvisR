@@ -12,9 +12,10 @@ import store from './store'
 
 import Vuetify from 'vuetify/lib';
 
-
 import 'font-awesome/css/font-awesome.min.css'
 
+import VueScrollactive from 'vue-scrollactive';
+Vue.use(VueScrollactive);
 
 Vue.config.productionTip = false
 
@@ -27,3 +28,4 @@ new Vue({
 Vue.use(Vuetify,{
   iconfont: 'fa'
 });
+

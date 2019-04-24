@@ -1,75 +1,150 @@
 <template>
     <section id="Services">
-        <VParallax :src="require('@/assets/fondocode.jpg')">    
-        <vContainer fluid>
+        <VParallax :src="require('@/assets/fondocode.jpg')"> 
+            <v-container grid-list-md fluid>   
             <!-- Servicios -->
             <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-2">Services</h1>    
-            <v-layout row wrap>
-            <v-flex xs3>
-                <v-card tile flat color="red darken-4">
-                <v-card-text>
-                    <br>
-                    <p>
-                        Soy José Agelvis Desarrollador Web Freelance de Caracas, Venezuela. Estudiante de VIII Semestre 
-                    de Ing. Sistema de la Universidad Nacional Experimental Politécnica de la Fuerza Armada Nacional (UNEFA).
-                    Trabajo actualmente en la misma institución. Debido a el valor de cambio monetario del bolívar venezolano y dolar estdounidense, tengo la oportunidad de ofrecer tarifas 
-                    de servicios competitivas. Usted tiene la oprtunidad de contratar mis servicios a un costo mucho menor
-                    que un desarrollador web junior local. 
-                    </p>
-                </v-card-text>
-                </v-card>
-            </v-flex>
-            <v-flex xs3>
-                <v-card tile flat color="red darken-4">
-                <v-card-text>
-                    <br>
-                    <p>
-                        Soy José Agelvis Desarrollador Web Freelance de Caracas, Venezuela. Estudiante de VIII Semestre 
-                    de Ing. Sistema de la Universidad Nacional Experimental Politécnica de la Fuerza Armada Nacional (UNEFA).
-                    Trabajo actualmente en la misma institución. Debido a el valor de cambio monetario del bolívar venezolano y dolar estdounidense, tengo la oportunidad de ofrecer tarifas 
-                    de servicios competitivas. Usted tiene la oprtunidad de contratar mis servicios a un costo mucho menor
-                    que un desarrollador web junior local. 
-                    </p>
-                </v-card-text>
-                </v-card>
-            </v-flex>
-            <v-flex xs3>
-                <v-card tile flat color="red darken-4">
-                <v-card-text>
-                    <br>
-                    <p>
-                        Soy José Agelvis Desarrollador Web Freelance de Caracas, Venezuela. Estudiante de VIII Semestre 
-                    de Ing. Sistema de la Universidad Nacional Experimental Politécnica de la Fuerza Armada Nacional (UNEFA).
-                    Trabajo actualmente en la misma institución. Debido a el valor de cambio monetario del bolívar venezolano y dolar estdounidense, tengo la oportunidad de ofrecer tarifas 
-                    de servicios competitivas. Usted tiene la oprtunidad de contratar mis servicios a un costo mucho menor
-                    que un desarrollador web junior local. 
-                    </p>
-                </v-card-text>
-                </v-card>
-            </v-flex>
-            <v-flex xs3>
-                <v-card tile flat color="red darken-4">
-                <v-card-text>
-                    <br>
-                    <p>
-                        Soy José Agelvis Desarrollador Web Freelance de Caracas, Venezuela. Estudiante de VIII Semestre 
-                    de Ing. Sistema de la Universidad Nacional Experimental Politécnica de la Fuerza Armada Nacional (UNEFA).
-                    Trabajo actualmente en la misma institución. Debido a el valor de cambio monetario del bolívar venezolano y dolar estdounidense, tengo la oportunidad de ofrecer tarifas 
-                    de servicios competitivas. Usted tiene la oprtunidad de contratar mis servicios a un costo mucho menor
-                    que un desarrollador web junior local. 
-                    </p>
-                </v-card-text>
-                </v-card>
-            </v-flex>
-            </v-layout>
-        </vContainer>
+                <v-layout row wrap>
+
+                    <v-flex xs3 lg3 md3 sm3>
+                    <v-card>
+                        <v-img
+                        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+                        height="200px"
+                        >
+                        </v-img>
+
+                        <v-card-title primary-title>
+                        <div>
+                            <div class="headline">Top western road trips</div>
+                            <span class="grey--text">1,000 miles of wonder</span>
+                        </div>
+                        </v-card-title>
+
+                        <v-card-actions>
+                        <v-btn flat>Share</v-btn>
+                        <v-btn flat color="purple">Explore</v-btn>
+                        <v-spacer></v-spacer>
+                        <v-btn icon @click="show = !show">
+                            <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+                        </v-btn>
+                        </v-card-actions>
+
+                        <v-slide-y-transition>
+                        <v-card-text v-show="show">
+                            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+                        </v-card-text>
+                        </v-slide-y-transition>
+                    </v-card>
+                    </v-flex>
+
+                    <v-flex xs3 sm3>
+                    <v-card>
+                        <v-img
+                        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+                        height="200px"
+                        >
+                        </v-img>
+
+                        <v-card-title primary-title>
+                        <div>
+                            <div class="headline">Top western road trips</div>
+                            <span class="grey--text">1,000 miles of wonder</span>
+                        </div>
+                        </v-card-title>
+
+                        <v-card-actions>
+                        <v-btn flat>Share</v-btn>
+                        <v-btn flat color="purple">Explore</v-btn>
+                        <v-spacer></v-spacer>
+                        <v-btn icon @click="show = !show">
+                            <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+                        </v-btn>
+                        </v-card-actions>
+
+                        <v-slide-y-transition>
+                        <v-card-text v-show="show">
+                            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+                        </v-card-text>
+                        </v-slide-y-transition>
+                    </v-card>
+                    </v-flex>
+
+                    <v-flex xs3 sm3 >
+                    <v-card>
+                        <v-img
+                        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+                        height="200px"
+                        >
+                        </v-img>
+
+                        <v-card-title primary-title>
+                        <div>
+                            <div class="headline">Top western road trips</div>
+                            <span class="grey--text">1,000 miles of wonder</span>
+                        </div>
+                        </v-card-title>
+
+                        <v-card-actions>
+                        <v-btn flat>Share</v-btn>
+                        <v-btn flat color="purple">Explore</v-btn>
+                        <v-spacer></v-spacer>
+                        <v-btn icon @click="show = !show">
+                            <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+                        </v-btn>
+                        </v-card-actions>
+
+                        <v-slide-y-transition>
+                        <v-card-text v-show="show">
+                            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+                        </v-card-text>
+                        </v-slide-y-transition>
+                    </v-card>
+                    </v-flex>
+
+                    <v-flex xs3 sm3 >
+                    <v-card>
+                        <v-img
+                        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+                        height="200px"
+                        >
+                        </v-img>
+
+                        <v-card-title primary-title>
+                        <div>
+                            <div class="headline">Top western road trips</div>
+                            <span class="grey--text">1,000 miles of wonder</span>
+                        </div>
+                        </v-card-title>
+
+                        <v-card-actions>
+                        <v-btn flat>Share</v-btn>
+                        <v-btn flat color="purple">Explore</v-btn>
+                        <v-spacer></v-spacer>
+                        <v-btn icon @click="show = !show">
+                            <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+                        </v-btn>
+                        </v-card-actions>
+
+                        <v-slide-y-transition>
+                        <v-card-text v-show="show">
+                            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+                        </v-card-text>
+                        </v-slide-y-transition>
+                    </v-card>
+                    </v-flex>                    
+                </v-layout>
+                </v-container>          
         </VParallax> 
     </section>
 </template>
 
 <script>
     export default {
-        name: 'ServicesJA'
+        name: 'ServicesJA',
+        data: () => ({
+            show: false
+        })
     }
 </script>
 

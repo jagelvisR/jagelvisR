@@ -10,11 +10,7 @@
            <v-card-text>
              <br>
              <p>
-                Soy José Agelvis Desarrollador Web Freelance de Caracas, Venezuela. Estudiante de VIII Semestre 
-              de Ing. Sistema de la Universidad Nacional Experimental Politécnica de la Fuerza Armada Nacional (UNEFA).
-              Trabajo actualmente en la misma institución. Debido a el valor de cambio monetario del bolívar venezolano y dolar estdounidense, tengo la oportunidad de ofrecer tarifas 
-              de servicios competitivas. Usted tiene la oprtunidad de contratar mis servicios a un costo mucho menor
-              que un desarrollador web junior local. 
+                I'm José Agelvis Freelance Web Developer from Caracas, Venezuela. Student of VIII Semester of Ing. System of the National Polytechnic Experimental University of the National Armed Force (UNEFA). I am currently working in the same institution. Due to the monetary exchange value of the Venezuelan bolivar and US dollar, I have the opportunity to offer competitive rates. You have the opportunity to hire my services at a lower cost than a local junior web developer.
              </p>
            </v-card-text>
          </v-card>
@@ -25,7 +21,7 @@
        <v-flex xs7>
          <v-card tile flat color="white" class="black--text">
            <v-card-text>
-            <h2 class="font-weight-red darken-4--text text-xs-center mb-2 mt-2">Habilidades</h2>
+            <h3 class="font-weight-red darken-4--text text-xs-center mb-2 mt-2">Habilidades</h3>
               <div class="text-xs-center">
                 <v-progress-circular
                   :rotate="360"
@@ -96,7 +92,7 @@
         if (this.value === 100) {
           return (this.value = 0)
         }
-        this.value += 10
+        this.value += 100
       }, 1000)
     }
   }

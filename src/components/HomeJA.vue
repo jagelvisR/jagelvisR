@@ -29,9 +29,8 @@
             </div>            
             <!-- btn redes sociales-->    
             <v-btn 
-                fab
                 wrap
-                class="red darken-4 mt-5" 
+                class="red darken-4 mt-5 btn-circle btn-lg" 
                 align="center"
                 v-for="(icon, index) in icons"
                 :key="`${index}`"
@@ -47,7 +46,7 @@
         </v-container>
         <v-container grid-list-md text-xs-center>
             <scrollactive 
-            class="my-nav " 
+            class="my-nav" 
             active-class="active"
             :offset="80"
             :duration="900"
@@ -55,12 +54,13 @@
                 <v-btn 
                 justify-center 
                 align="center" 
-                fab
                 wrap
-                class="red darken-4 mt-5 scrollactive-item"
-                to="#AboutMe"
+                icon
+                dark
+                class="red darken-4 mt-5 scrollactive-item btn-circle btn-xl"
+                to='#AboutMe'
                 >
-                    <v-icon large color="white" size="50px">expand</v-icon>
+                    <v-icon large color="white" size="30px">fa-angle-double-down</v-icon>
                 </v-btn>
             </scrollactive>    
         </v-container>
@@ -94,28 +94,106 @@ export default {
         abrirURL(url) {
             return window.open(url);
         },
-
     }
     
 };
 </script>
 
 <style scoped>
-.HomeJA {
-    /*background: url('https://www.catalunyapress.es/images/showid2/2158647?w=1200&zc=4');*/
-    /*background-size: cover;
-    width: 100%;
-    height: 100%;*/
-
-    background-size:cover;
-
-    /* Set a specific height */
-    min-height: 100vh;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+/*btn circulares*/
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
 }
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+
+/* boton de secciones*/
+
+
+.pinkBg {
+    background-color: #ed184f!important;
+    background-image: linear-gradient(90deg, #fd5581, #fd8b55);
+}
+.intro-banner-vdo-play-btn{
+    /*height:60px;*/
+    /*width:60px;*/
+    /*position:absolute;*/
+    /*top:50%;*/
+    /*left:50%;*/
+    text-align:center;
+    margin:-30px 0 0 -30px;
+    border-radius:100px;
+    z-index:1
+}
+.intro-banner-vdo-play-btn i{
+    line-height:56px;
+    font-size:30px
+}
+.intro-banner-vdo-play-btn .ripple{
+    position:absolute;
+    width:160px;
+    height:160px;
+    z-index:-1;
+    left:50%;
+    top:50%;
+    opacity:0;
+    margin:-80px 0 0 -80px;
+    border-radius:100px;
+    -webkit-animation:ripple 1.8s infinite;
+    animation:ripple 1.8s infinite
+}
+
+@-webkit-keyframes ripple{
+    0%{
+        opacity:1;
+        -webkit-transform:scale(0);
+        transform:scale(0)
+    }
+    100%{
+        opacity:0;
+        -webkit-transform:scale(1);
+        transform:scale(1)
+    }
+}
+@keyframes ripple{
+    0%{
+        opacity:1;
+        -webkit-transform:scale(0);
+        transform:scale(0)
+    }
+    100%{
+        opacity:0;
+        -webkit-transform:scale(1);
+        transform:scale(1)
+    }
+}
+.intro-banner-vdo-play-btn .ripple:nth-child(2){
+    animation-delay:.3s;
+    -webkit-animation-delay:.3s
+}
+.intro-banner-vdo-play-btn .ripple:nth-child(3){
+    animation-delay:.6s;
+    -webkit-animation-delay:.6s
+}
+
 </style>

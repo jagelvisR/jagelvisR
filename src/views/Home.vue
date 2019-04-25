@@ -5,6 +5,7 @@
     <ServicesJA/>
     <PortfolioJA/>
     <ContactJA/>
+    <FooterJA/>
   </v-app> 
 </template>
 
@@ -15,6 +16,7 @@ import AboutJA from '@/components/AboutJA.vue';
 import ServicesJA from '@/components/ServicesJA.vue';
 import PortfolioJA from '@/components/PortfolioJA.vue';
 import ContactJA from '@/components/ContactJA.vue';
+import FooterJA from '@/components/FooterJA.vue';
 //import HomeDetails from '@/components/HomeDetails';
 //import HomePlans from '@/components/HomePlans';
 
@@ -27,7 +29,8 @@ import ContactJA from '@/components/ContactJA.vue';
       //HomePlans
       ServicesJA,
       PortfolioJA,
-      ContactJA
+      ContactJA,
+      FooterJA
     }
   }
 </script>

@@ -1,75 +1,125 @@
-<template>
+<template v-slot:opposite>
  <section id="AboutMe">
    <vContainer fluid>
      <!-- About ME-->
     <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-2">About Me</h1>
       <!-- About descripcion-->
      <v-layout row wrap>
-       <v-flex xs5>
+       <v-flex xs12>
          <v-card tile flat color="red darken-4">
            <v-card-text>
              <br>
-             <p>
+             <h5>
                 I'm José Agelvis Freelance Web Developer from Caracas, Venezuela. Student of VIII Semester of Ing. System of the National Polytechnic Experimental University of the National Armed Force (UNEFA). I am currently working in the same institution. Due to the monetary exchange value of the Venezuelan bolivar and US dollar, I have the opportunity to offer competitive rates. You have the opportunity to hire my services at a lower cost than a local junior web developer.
-             </p>
+             </h5>
            </v-card-text>
          </v-card>
-       </v-flex>
     
       <!-- Habilidades -->
      
-       <v-flex xs7>
-         <v-card tile flat color="white" class="black--text">
+         <v-card tile flat >
            <v-card-text>
-            <h3 class="font-weight-red darken-4--text text-xs-center mb-2 mt-2">Habilidades</h3>
+            <h3 class="font-weight-red darken-4--text text-xs-center mb-2 mt-2">Skills</h3>
               <div class="text-xs-center">
+
                 <v-progress-circular
                   :rotate="360"
-                  :size="100"
+                  :size="220"
                   :width="15"
                   :value="value"
-                  color="teal"
+                  color="light-blue lighten-1"
                 >
-                  <h4>{{ value }}</h4>
-                  <h5>Vue.js</h5>
+                  <h3>{{ value }}</h3>
+                  <v-img :src="require('@/assets/vuetifyLogo.png')" width="100"></v-img>
+                  <h4 class="white--text mt-2">Vuetify</h4>
+                </v-progress-circular>
+
+                <v-progress-circular
+                  :rotate="360"
+                  :size="220"
+                  :width="15"
+                  :value="value"
+                  color="green accent-3"
+                >
+                  <h3>{{ value }}</h3>
+                  <v-img :src="require('@/assets/vueLogo.png')" width="100"></v-img>
+                  <h4 class="white--text mt-2">Vue.js</h4>
                 </v-progress-circular>
 
                 <v-progress-circular
                   :rotate="-90"
-                  :size="100"
+                  :size="220"
                   :width="15"
                   :value="value"
-                  color="primary"
+                  color="yellow lighten-1"
                 >
-                  <h4>{{ value }}</h4>
-                  <h5>JQuery</h5>
+                  <h3>{{ value }}</h3>
+                  <v-img :src="require('@/assets/jsLogo.png')" width="100"></v-img>
+                  <h4 class="white--text mt-2">JavaScript</h4>
                 </v-progress-circular>
-
+                
                 <v-progress-circular
                   :rotate="90"
-                  :size="100"
+                  :size="220"
                   :width="15"
                   :value="value"
                   color="red"
                 >
-                  <h4>{{ value }}</h4>
-                  <h5>Laravel</h5>
+                  <h3>{{ value }}</h3>
+                  <v-img :src="require('@/assets/laravelLogo.png')" width="100"></v-img>
+                  <h4 class="white--text mt-2">Laravel</h4>
                 </v-progress-circular>
 
                 <v-progress-circular
                   :rotate="180"
-                  :size="100"
+                  :size="220"
                   :width="15"
                   :value="value"
-                  color="pink"
+                  color="green darken-4"
                 >
-                  <h4>{{ value }}</h4>
-                  <h5>Django</h5>
+                  <h3>{{ value }}</h3>
+                  <v-img :src="require('@/assets/djangoLogo.png')" width="100"></v-img>
+                  <h4 class="white--text mt-2">Django</h4>
+                </v-progress-circular>
+                  
+                <v-progress-circular
+                  :rotate="315"
+                  :size="220"
+                  :width="15"
+                  :value="value"
+                  color="light-blue darken-3"
+                >
+                  <h3>{{ value }}</h3>
+                  <v-img :src="require('@/assets/postgresLogo.png')" width="100"></v-img>
+                  <h4 class="white--text mt-2">Postgresql</h4>
                 </v-progress-circular>
               </div>
            </v-card-text>
          </v-card>
        </v-flex>
+     </v-layout>
+
+     <!-- Experiencia Laboral -->
+
+     <v-layout row wrap>
+        <v-flex xs12>
+          <h3 class="font-weight-red darken-4--text text-xs-center mb-2 mt-4">Experience</h3>
+          <v-timeline>
+            <v-timeline-item
+              v-for="n in 4"
+              :key="n"
+              color="red darken-4"
+              large
+            >    
+              <v-card class="elevation-2">
+                <v-card-title class="headline">Lorem ipsum</v-card-title>
+                  <v-card-text>
+                    Lorem ipsum dolor sit amet, no i nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
+                  </v-card-text>
+              </v-card>
+            </v-timeline-item>
+          </v-timeline>    
+        </v-flex>
      </v-layout>
    </vContainer>
  </section>

@@ -6,8 +6,8 @@
                 <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-2">Contact Me</h1>
                 <br>
                 <form>
-                <v-layout wrap>
-                    <v-flex xs6 md6 offset-3>
+                <v-layout wrap row>
+                    <v-flex xs6 md6>
                         <v-text-field
                             v-model="name"
                             :error-messages="nameErrors"
@@ -19,8 +19,7 @@
                             @blur="$v.name.$touch()"
                         >
                         </v-text-field>
-                    </v-flex>
-                    <v-flex xs6 md6 offset-3>
+
                         <v-text-field
                             v-model="email"
                             :error-messages="emailErrors"
@@ -31,8 +30,7 @@
                             @blur="$v.email.$touch()"
                         >
                         </v-text-field>
-                    </v-flex>
-                    <v-flex xs6 md4 offset-3>
+                    
                         <v-select
                             v-model="select"
                             :items="items"
@@ -44,8 +42,7 @@
                             @blur="$v.select.$touch()"
                         >
                         </v-select>
-                    </v-flex>
-                    <v-flex xs6 md4 offset-3 grid-list-md>
+                    
                         <v-textarea
                             outline
                             box
@@ -56,8 +53,7 @@
                             label="Outline textarea"
                             >
                         </v-textarea>
-                    </v-flex> 
-                    <v-flex xs6 md4 offset-3>
+                   
                         <v-checkbox
                             v-model="checkbox"
                             :error-messages="checkboxErrors"
@@ -67,10 +63,13 @@
                             @blur="$v.checkbox.$touch()"
                         >
                         </v-checkbox>
-                    </v-flex>   
-                    <v-flex xs6 md6 sm6 xs2 offset-3 justify-center align-center row fill-height>
+                    
                         <v-btn @click="clear" color="warning">clear</v-btn>
                         <v-btn @click="submit" color="primary">submit</v-btn>
+                    </v-flex>
+
+                    <v-flex xs6 md6  class="px-5">
+                        <!--<i class="fa fa-map-marker" size="100"></i>-->
                     </v-flex>    
                 </v-layout>
                 </form>
@@ -88,7 +87,7 @@
             mixins: [validationMixin],
 
         validations: {
-            name: { required, maxLength: maxLength(10) },
+            name: { required, maxLength: maxLength(20) },
             email: { required, email },
             select: { required },
             checkbox: {
@@ -155,5 +154,32 @@
 </script>
 
 <style scoped>
+
+/*btn circulares*/
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
 
 </style>

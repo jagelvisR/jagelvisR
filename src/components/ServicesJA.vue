@@ -1,12 +1,12 @@
 <template>
     <section id="Services">
-        <VParallax :src="require('@/assets/fondocode.jpg')"> 
+        <VParallax :src="require('@/assets/fondocode.jpg')" height="800"> 
             <v-container grid-list-md fluid>   
             <!-- Servicios -->
-            <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-2">Services</h1>    
+            <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-4">Services</h1>    
                 <v-layout row wrap>
 
-                    <v-flex xs3 lg3 md3 sm3>
+                    <v-flex xs6 lg6 md3 sm2>
                     <v-card>
                         <v-img
                         src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
@@ -38,7 +38,7 @@
                     </v-card>
                     </v-flex>
 
-                    <v-flex xs3 sm3>
+                    <v-flex xs6 lg6 md3 sm2>
                     <v-card>
                         <v-img
                         src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
@@ -70,7 +70,7 @@
                     </v-card>
                     </v-flex>
 
-                    <v-flex xs3 sm3 >
+                    <v-flex xs6 lg6 md3 sm2>
                     <v-card>
                         <v-img
                         src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
@@ -102,7 +102,7 @@
                     </v-card>
                     </v-flex>
 
-                    <v-flex xs3 sm3 >
+                    <v-flex xs6 lg6 md3 sm2>
                     <v-card>
                         <v-img
                         src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"

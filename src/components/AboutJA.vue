@@ -2,7 +2,7 @@
  <section id="AboutMe">
    <vContainer fluid>
      <!-- About ME-->
-    <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-2">About Me</h1>
+    <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-4">About Me</h1>
       <!-- About descripcion-->
      <v-layout row wrap>
        <v-flex xs12>
@@ -23,7 +23,7 @@
               <div class="text-xs-center">
 
                 <v-progress-circular
-                  :rotate="360"
+                  :rotate="270"
                   :size="220"
                   :width="15"
                   :value="value"
@@ -35,7 +35,7 @@
                 </v-progress-circular>
 
                 <v-progress-circular
-                  :rotate="360"
+                  :rotate="270"
                   :size="220"
                   :width="15"
                   :value="value"
@@ -47,7 +47,7 @@
                 </v-progress-circular>
 
                 <v-progress-circular
-                  :rotate="-90"
+                  :rotate="270"
                   :size="220"
                   :width="15"
                   :value="value"
@@ -59,7 +59,7 @@
                 </v-progress-circular>
                 
                 <v-progress-circular
-                  :rotate="90"
+                  :rotate="270"
                   :size="220"
                   :width="15"
                   :value="value"
@@ -71,7 +71,7 @@
                 </v-progress-circular>
 
                 <v-progress-circular
-                  :rotate="180"
+                  :rotate="270"
                   :size="220"
                   :width="15"
                   :value="value"
@@ -83,7 +83,7 @@
                 </v-progress-circular>
                   
                 <v-progress-circular
-                  :rotate="315"
+                  :rotate="270"
                   :size="220"
                   :width="15"
                   :value="value"
@@ -111,8 +111,8 @@
               color="red darken-4"
               large
             >    
-              <v-card class="elevation-2">
-                <v-card-title class="headline">Lorem ipsum</v-card-title>
+              <v-card class="elevation-2 grey darken-2">
+                <v-card-title class="headline red darken-4">Lorem ipsum</v-card-title>
                   <v-card-text>
                     Lorem ipsum dolor sit amet, no i nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
                   </v-card-text>
@@ -121,6 +121,34 @@
           </v-timeline>    
         </v-flex>
      </v-layout>
+
+     <!-- Educación -->
+
+    <v-layout row fluid wrap tile>
+      <v-card tile flat>
+        <v-card-text>
+          <v-flex xs12>
+            <h3 class="font-weight-red darken-4--text text-xs-center mb-2 mt-4">Education</h3>
+            <v-timeline>
+              <v-timeline-item
+                v-for="n in 4"
+                :key="n"
+                color="red darken-4"
+                large
+              >    
+                <v-card class="elevation-2 grey darken-2">
+                  <v-card-title class="headline red darken-4">Lorem ipsum</v-card-title>
+                    <v-card-text>
+                      Lorem ipsum dolor sit amet, no i nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
+                    </v-card-text>
+                </v-card>
+              </v-timeline-item>
+            </v-timeline>    
+          </v-flex>
+        </v-card-text>
+      </v-card>    
+     </v-layout>
+
    </vContainer>
  </section>
 </template>

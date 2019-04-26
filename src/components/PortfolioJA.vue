@@ -2,7 +2,7 @@
     <section id='Portfolio'>
         <v-container grid-list-md fluid>   
             <!-- Portafolio -->
-            <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-2">Portfolio</h1>    
+            <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-4">Portfolio</h1>    
             <v-layout>
                 <v-flex xs12 sm6 offset-sm3>
                 <v-card>

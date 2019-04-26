@@ -10,7 +10,7 @@
     >
       <v-card-title class="red darken-4">
         <strong class="subheading">Connect to my social media profiles!</strong>
-
+      
         <v-spacer></v-spacer>
 
         <v-btn

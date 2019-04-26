@@ -1,78 +1,95 @@
 <template>
-    <section id="ContactMe" color="danger">
-        <v-parallax :src="require('@/assets/fondocode.jpg')" height="800">
-            <v-container grid-list-md grid-list-sm fluid> 
+    <section id="ContactMe">
+        <v-parallax :src="require('@/assets/fondocode.jpg')" height="1200">
+            <v-container fluid grid-list-md text-xs-center> 
             <!-- Contact ME-->
-                <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-2">Contact Me</h1>
+                <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-4">Contact Me</h1>
                 <br>
-                <form>
-                <v-layout wrap row>
-                    <v-flex xs6 md6>
-                        <v-text-field
-                            v-model="name"
-                            :error-messages="nameErrors"
-                            :counter="10"
-                            label="Name"
-                            outline
-                            required
-                            @input="$v.name.$touch()"
-                            @blur="$v.name.$touch()"
-                        >
-                        </v-text-field>
+                <v-layout wrap row justify-center>
+                    <v-flex xs10 sm10 md6 lg6>
+                        <v-card>
+                            <v-card-text>
+                                <v-text-field
+                                    v-model="name"
+                                    :error-messages="nameErrors"
+                                    :counter="10"
+                                    label="Name"
+                                    box
+                                    outline
+                                    required
+                                    @input="$v.name.$touch()"
+                                    @blur="$v.name.$touch()"
+                                >
+                                </v-text-field>
 
-                        <v-text-field
-                            v-model="email"
-                            :error-messages="emailErrors"
-                            label="E-mail"
-                            outline
-                            required
-                            @input="$v.email.$touch()"
-                            @blur="$v.email.$touch()"
-                        >
-                        </v-text-field>
-                    
-                        <v-select
-                            v-model="select"
-                            :items="items"
-                            :error-messages="selectErrors"
-                            label="Item"
-                            outline
-                            required
-                            @change="$v.select.$touch()"
-                            @blur="$v.select.$touch()"
-                        >
-                        </v-select>
-                    
-                        <v-textarea
-                            outline
-                            box
-                            height="200"
-                            cols="200"
-                            auto-grow
-                            name="input-7-1"
-                            label="Outline textarea"
-                            >
-                        </v-textarea>
-                   
-                        <v-checkbox
-                            v-model="checkbox"
-                            :error-messages="checkboxErrors"
-                            label="Do you agree?"
-                            required
-                            @change="$v.checkbox.$touch()"
-                            @blur="$v.checkbox.$touch()"
-                        >
-                        </v-checkbox>
-                    
-                        <v-btn @click="clear" color="warning">clear</v-btn>
-                        <v-btn @click="submit" color="primary">submit</v-btn>
+                                <v-text-field
+                                    v-model="email"
+                                    :error-messages="emailErrors"
+                                    label="E-mail"
+                                    box
+                                    outline
+                                    required
+                                    @input="$v.email.$touch()"
+                                    @blur="$v.email.$touch()"
+                                >
+                                </v-text-field>
+                            
+                                <v-select
+                                    v-model="select"
+                                    :items="items"
+                                    :error-messages="selectErrors"
+                                    label="Item"
+                                    box
+                                    outline
+                                    required
+                                    @change="$v.select.$touch()"
+                                    @blur="$v.select.$touch()"
+                                >
+                                </v-select>
+                            
+                                <v-textarea
+                                    outline
+                                    box
+                                    height="200"
+                                    cols="200"
+                                    auto-grow
+                                    name="input-7-1"
+                                    label="Outline textarea"
+                                    >
+                                </v-textarea>
+                        
+                                <v-checkbox
+                                    v-model="checkbox"
+                                    :error-messages="checkboxErrors"
+                                    label="Do you agree?"
+                                    required
+                                    @change="$v.checkbox.$touch()"
+                                    @blur="$v.checkbox.$touch()"
+                                >
+                                </v-checkbox>
+                            
+                                <v-btn @click="clear" color="warning" align-center justify-center>clear</v-btn>
+                                <v-btn @click="submit" color="primary" align-center justify-center>submit</v-btn>
+                            </v-card-text>
+                        </v-card>    
                     </v-flex>
 
-                    <v-flex xs6 md6  class="px-5">
-                        <!--<i class="fa fa-map-marker" size="100"></i>-->
+                    <!-- Columna 2 datos-->
+
+                    <v-flex xs10 sm10 md6 lg6 class="px-1">
+                        <v-card fluid tile flat>
+                            <v-card-text>
+                                <p class="font-weight-medium"><i class="fa fa-map-marker fa-2x btn-circle btn-sm red darken-4"></i> Caracas, Venezuela</p>
+                                <br>
+                                <p class="font-weight-medium"><i class="fa fa-envelope fa-2x btn-circle btn-sm red darken-4"></i> josegagelvisdeveloper@gmail.com</p>
+                                <br>
+                                <p class="font-weight-medium"><i class="fa fa-whatsapp fa-2x btn-circle btn-sm red darken-4"></i> +58 414 214 44 78</p>
+                                <br>
+                                <p class="font-weight-medium"><i class="fa fa-telegram fa-2x btn-circle btn-sm-x red darken-4"></i> +58 414 214 44 78</p>
+                            </v-card-text>
+                        </v-card>
                     </v-flex>    
                 </v-layout>
-                </form>
             </v-container>
         </v-parallax>    
     </section>
@@ -165,21 +182,22 @@
   line-height: 1.428571429;
   border-radius: 15px;
 }
-.btn-circle.btn-lg {
-  width: 50px;
-  height: 50px;
-  padding: 10px 16px;
+
+.btn-circle.btn-sm {
+  width: 30px;
+  height: 30px;
+  padding: 4px 2px;
   font-size: 18px;
   line-height: 1.33;
   border-radius: 25px;
 }
-.btn-circle.btn-xl {
-  width: 70px;
-  height: 70px;
-  padding: 10px 16px;
-  font-size: 24px;
-  line-height: 1.33;
-  border-radius: 35px;
-}
 
+.btn-circle.btn-sm-x {
+  width: 30px;
+  height: 30px;
+  padding: 2px 0px;
+  font-size: 20px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
 </style>

@@ -17,7 +17,7 @@
     
       <!-- Habilidades -->
      
-         <v-card tile flat >
+         <v-card tile flat>
            <v-card-text>
             <h3 class="font-weight-red darken-4--text text-xs-center mb-2 mt-2">Skills</h3>
               <div class="text-xs-center">
@@ -124,9 +124,7 @@
 
      <!-- Educación -->
 
-    <v-layout row fluid wrap tile>
-      <v-card tile flat>
-        <v-card-text>
+    <v-layout row wrap tile class="grey darken-3">
           <v-flex xs12>
             <h3 class="font-weight-red darken-4--text text-xs-center mb-2 mt-4">Education</h3>
             <v-timeline>
@@ -144,9 +142,7 @@
                 </v-card>
               </v-timeline-item>
             </v-timeline>    
-          </v-flex>
-        </v-card-text>
-      </v-card>    
+          </v-flex>  
      </v-layout>
 
    </vContainer>

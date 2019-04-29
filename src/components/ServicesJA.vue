@@ -1,150 +1,64 @@
 <template>
     <section id="Services">
-        <VParallax :src="require('@/assets/fondocode.jpg')" height="800"> 
             <v-container grid-list-md fluid>   
             <!-- Servicios -->
             <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-4">Services</h1>    
                 <v-layout row wrap>
-
-                    <v-flex xs6 lg6 md3 sm2>
-                    <v-card>
-                        <v-img
-                        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-                        height="200px"
-                        >
-                        </v-img>
-
-                        <v-card-title primary-title>
-                        <div>
-                            <div class="headline">Top western road trips</div>
-                            <span class="grey--text">1,000 miles of wonder</span>
-                        </div>
-                        </v-card-title>
-
-                        <v-card-actions>
-                        <v-btn flat>Share</v-btn>
-                        <v-btn flat color="purple">Explore</v-btn>
-                        <v-spacer></v-spacer>
-                        <v-btn icon @click="show = !show">
-                            <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
-                        </v-btn>
-                        </v-card-actions>
-
-                        <v-slide-y-transition>
-                        <v-card-text v-show="show">
-                            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
-                        </v-card-text>
-                        </v-slide-y-transition>
-                    </v-card>
+                    <v-flex
+                        xs6
+                        sm6
+                        md3
+                        lg3
+                        align-center
+                        justify-center
+                        text-xs-center
+                        v-for="(serv, index) in service"
+                        :key="`${index}`"
+                        class="mt-4"
+                    >
+                        
+                                <v-avatar
+                                :tile="tile"
+                                :size="avatarSize"
+                                color="red darken-4"
+                                >
+                                    <i color="white" :class="`${serv.icon}`"></i>
+                                </v-avatar>                                    
+                            
+                            <div class="mt-3">
+                                <!-- Services name-->
+                            
+                                <h5>{{serv.name}}</h5>
+                                <br>
+                            </div>
+                            
+                            
+                    
                     </v-flex>
-
-                    <v-flex xs6 lg6 md3 sm2>
-                    <v-card>
-                        <v-img
-                        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-                        height="200px"
-                        >
-                        </v-img>
-
-                        <v-card-title primary-title>
-                        <div>
-                            <div class="headline">Top western road trips</div>
-                            <span class="grey--text">1,000 miles of wonder</span>
-                        </div>
-                        </v-card-title>
-
-                        <v-card-actions>
-                        <v-btn flat>Share</v-btn>
-                        <v-btn flat color="purple">Explore</v-btn>
-                        <v-spacer></v-spacer>
-                        <v-btn icon @click="show = !show">
-                            <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
-                        </v-btn>
-                        </v-card-actions>
-
-                        <v-slide-y-transition>
-                        <v-card-text v-show="show">
-                            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
-                        </v-card-text>
-                        </v-slide-y-transition>
-                    </v-card>
-                    </v-flex>
-
-                    <v-flex xs6 lg6 md3 sm2>
-                    <v-card>
-                        <v-img
-                        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-                        height="200px"
-                        >
-                        </v-img>
-
-                        <v-card-title primary-title>
-                        <div>
-                            <div class="headline">Top western road trips</div>
-                            <span class="grey--text">1,000 miles of wonder</span>
-                        </div>
-                        </v-card-title>
-
-                        <v-card-actions>
-                        <v-btn flat>Share</v-btn>
-                        <v-btn flat color="purple">Explore</v-btn>
-                        <v-spacer></v-spacer>
-                        <v-btn icon @click="show = !show">
-                            <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
-                        </v-btn>
-                        </v-card-actions>
-
-                        <v-slide-y-transition>
-                        <v-card-text v-show="show">
-                            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
-                        </v-card-text>
-                        </v-slide-y-transition>
-                    </v-card>
-                    </v-flex>
-
-                    <v-flex xs6 lg6 md3 sm2>
-                    <v-card>
-                        <v-img
-                        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-                        height="200px"
-                        >
-                        </v-img>
-
-                        <v-card-title primary-title>
-                        <div>
-                            <div class="headline">Top western road trips</div>
-                            <span class="grey--text">1,000 miles of wonder</span>
-                        </div>
-                        </v-card-title>
-
-                        <v-card-actions>
-                        <v-btn flat>Share</v-btn>
-                        <v-btn flat color="purple">Explore</v-btn>
-                        <v-spacer></v-spacer>
-                        <v-btn icon @click="show = !show">
-                            <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
-                        </v-btn>
-                        </v-card-actions>
-
-                        <v-slide-y-transition>
-                        <v-card-text v-show="show">
-                            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
-                        </v-card-text>
-                        </v-slide-y-transition>
-                    </v-card>
-                    </v-flex>                    
                 </v-layout>
-                </v-container>          
-        </VParallax> 
+            </v-container>          
     </section>
 </template>
 
 <script>
     export default {
         name: 'ServicesJA',
-        data: () => ({
-            show: false
-        })
+            data: () => ({
+                slider: 100,
+                tile: false,
+                service: [
+                    {icon: 'fa fa-code fa-4x', name:'Front-End'},
+                    {icon: 'fa fa-laptop fa-4x', name:'Back-End'},
+                    {icon: 'fa fa-database fa-4x', name:'Database'},
+                    {icon: 'fa fa-cart-plus fa-4x', name:'E-Commerce'},
+                ]
+            }),
+
+            computed: {
+            avatarSize () {
+                return `${this.slider}px`
+            }
+        }
     }
 </script>
 

@@ -33,7 +33,7 @@
                                     @blur="$v.email.$touch()"
                                 >
                                 </v-text-field>
-                                 <!--Select-->
+                                 <!--Select item para servicio-->
                                 <v-select
                                     v-model="select"
                                     :items="items"
@@ -68,6 +68,7 @@
                                     auto-grow
                                     name="input-7-1"
                                     label="Comment"
+                                    @keyup="sinLetras"
                                     >
                                 </v-textarea>
                         
@@ -185,7 +186,7 @@
                 !this.$v.select.required && errors.push('Item is required')
                 return errors
             },
-            nameErrors () {
+            nameErrors ( ) {
                 const errors = []
                 if (!this.$v.name.$dirty) return errors
                 !this.$v.name.maxLength && errors.push('Name must be at most 10 characters long')
@@ -193,7 +194,7 @@
                 return errors
             },
             emailErrors () {
-                const errors = []
+                const errors = [] 
                 if (!this.$v.email.$dirty) return errors
                 !this.$v.email.email && errors.push('Must be valid e-mail')
                 !this.$v.email.required && errors.push('E-mail is required')
@@ -206,6 +207,7 @@
                 !this.$v.subject.required && errors.push('Subject is required.')
                 return errors
             },
+            
 
         },
         methods: {
@@ -221,8 +223,18 @@
                 this.checkbox = false
             },
             abrirURL(url) { //Abrir url de mis redes sociales en otra pestaña
-            return window.open(url);
+                return window.open(url);
             },
+            //prohibir determinados caracteres
+            sinLetras(e) {
+                let tecla = (document.all) ? e.keyCode : e.which; 
+                let teclaKey = e.keyCode;
+                if (tecla==8) return true; 
+                // Patron de entrada, en este caso solo acepta numeros y letras
+                let patron = /[A-Za-zÃ±Ã‘'Ã¡Ã©Ã­Ã³ÃºÃÃ‰ÃÃ“ÃšÃ Ã¨Ã¬Ã²Ã¹Ã€ÃˆÃŒÃ’Ã™Ã¢ÃªÃ®Ã´Ã»Ã‚ÃŠÃŽÃ”Ã›Ã‘Ã±Ã¤Ã«Ã¯Ã¶Ã¼Ã„Ã‹ÃÃ–Ãœ\s\t]/;
+                let keyFromCode = String.fromCharCode(tecla);
+                return patron.test(keyFromCode);
+            }            
         }
     }
 </script>

@@ -8,82 +8,85 @@
                     <v-flex xs10 sm10 md6 lg6>
                         <v-card>
                             <v-card-text>
-                                <!--Name-->
-                                <v-text-field
-                                    v-model="name"
-                                    :error-messages="nameErrors"
-                                    :counter="10"
-                                    label="Name"
-                                    box
-                                    outline
-                                    required
-                                    @input="$v.name.$touch()"
-                                    @blur="$v.name.$touch()"
-                                >
-                                </v-text-field>
-                                <!--E-mail-->
-                                <v-text-field
-                                    v-model="email"
-                                    :error-messages="emailErrors"
-                                    label="E-mail"
-                                    box
-                                    outline
-                                    required
-                                    @input="$v.email.$touch()"
-                                    @blur="$v.email.$touch()"
-                                >
-                                </v-text-field>
-                                 <!--Select item para servicio-->
-                                <v-select
-                                    v-model="select"
-                                    :items="items"
-                                    :error-messages="selectErrors"
-                                    label="Item"
-                                    box
-                                    outline
-                                    required
-                                    @change="$v.select.$touch()"
-                                    @blur="$v.select.$touch()"
-                                >
-                                </v-select>
-                                <!--Subject-->
-                                <v-text-field
-                                    v-model="subject"
-                                    :error-messages="subjectErrors"
-                                    :counter="30"
-                                    label="Subject"
-                                    box
-                                    outline
-                                    required
-                                    @input="$v.subject.$touch()"
-                                    @blur="$v.subject.$touch()"
-                                >
-                                </v-text-field>
-                                <!--Textarea Comment-->
-                                <v-textarea
-                                    outline
-                                    box
-                                    height="200"
-                                    cols="200"
-                                    auto-grow
-                                    name="input-7-1"
-                                    label="Comment"
-                                    @keyup="sinLetras"
+                                <form @submit.prevent="addCoin">
+                                    <!--Name-->
+                                    <v-text-field
+                                        v-model="name"
+                                        :error-messages="nameErrors"
+                                        :counter="10"
+                                        label="Name"
+                                        box
+                                        outline
+                                        required
+                                        @input="$v.name.$touch()"
+                                        @blur="$v.name.$touch()"
                                     >
-                                </v-textarea>
-                        
-                                <v-checkbox
-                                    v-model="checkbox"
-                                    :error-messages="checkboxErrors"
-                                    label="Do you agree?"
-                                    required
-                                    @change="$v.checkbox.$touch()"
-                                    @blur="$v.checkbox.$touch()"
-                                >
-                                </v-checkbox>
+                                    </v-text-field>
+                                    <!--E-mail-->
+                                    <v-text-field
+                                        v-model="email"
+                                        :error-messages="emailErrors"
+                                        label="E-mail"
+                                        box
+                                        outline
+                                        required
+                                        @input="$v.email.$touch()"
+                                        @blur="$v.email.$touch()"
+                                    >
+                                    </v-text-field>
+                                    <!--Select item para servicio-->
+                                    <v-select
+                                        v-model="select"
+                                        :items="items"
+                                        :error-messages="selectErrors"
+                                        label="Item"
+                                        box
+                                        outline
+                                        required
+                                        @change="$v.select.$touch()"
+                                        @blur="$v.select.$touch()"
+                                    >
+                                    </v-select>
+                                    <!--Subject-->
+                                    <v-text-field
+                                        v-model="subject"
+                                        :error-messages="subjectErrors"
+                                        :counter="30"
+                                        label="Subject"
+                                        box
+                                        outline
+                                        required
+                                        @input="$v.subject.$touch()"
+                                        @blur="$v.subject.$touch()"
+                                    >
+                                    </v-text-field>
+                                    <!--Textarea Comment-->
+                                    <v-textarea
+                                        v-model="text"
+                                        outline
+                                        box
+                                        height="200"
+                                        cols="200"
+                                        auto-grow
+                                        name="input-7-1"
+                                        label="Message"
+                                        @keyup="soloLetras"
+                                        >
+                                    </v-textarea>
                             
-                                <v-btn @click="clear" color="warning" align-center justify-center>clear</v-btn>
-                                <v-btn @click="submit" color="red darken-4" align-center justify-center>submit</v-btn>
+                                    <v-checkbox
+                                        v-model="checkbox"
+                                        :error-messages="checkboxErrors"
+                                        label="Do you agree?"
+                                        required
+                                        @change="$v.checkbox.$touch()"
+                                        @blur="$v.checkbox.$touch()"
+                                    >
+                                    </v-checkbox>
+                                
+                                    <v-btn @click="clear" color="warning" align-center justify-center>clear</v-btn>
+                                    <v-btn @click="submit" color="red darken-4" align-center justify-center>submit</v-btn>
+                                </form>
                             </v-card-text>
                         </v-card>    
                     </v-flex>
@@ -130,9 +133,12 @@
 </template>
 
 <script>
-  import { validationMixin } from 'vuelidate'
-  import { required, maxLength, email } from 'vuelidate/lib/validators'
+    import { validationMixin } from 'vuelidate'
+    import { required, maxLength, email } from 'vuelidate/lib/validators'
+    import { log } from 'util';
 
+    import { db } from '../config/db';
+    
     export default {
         name: 'ContactJA',
             mixins: [validationMixin],
@@ -163,6 +169,7 @@
             ],
             checkbox: false,
             subject: '',
+            text: '',
             icons: [
                 {perfil:'fa-facebook-f', url: 'https://facebook.com/jagelvisR'},
                 {perfil:'fa-twitter', url: 'https://twitter.com/jagelvisR'},
@@ -212,13 +219,25 @@
         },
         methods: {
             submit () {
-                this.$v.$touch()
+                //this.$v.$touch()
+                this.$firebaseRefs.coins.push({
+                    name: this.name,
+                    email: this.email,
+                    select: this.select,
+                    subject: this.subject,
+                    text: this.text,
+                    checkbox: this.checkbox
+                });
+                clear();
+                alert("Succeessfully added");
+                } 
             },
             clear () {
                 this.$v.$reset()
                 this.name = ''
                 this.email = ''
                 this.subject = ''
+                this.text = ''
                 this.select = null
                 this.checkbox = false
             },
@@ -226,17 +245,23 @@
                 return window.open(url);
             },
             //prohibir determinados caracteres
-            sinLetras(e) {
-                let tecla = (document.all) ? e.keyCode : e.which; 
-                let teclaKey = e.keyCode;
-                if (tecla==8) return true; 
-                // Patron de entrada, en este caso solo acepta numeros y letras
-                let patron = /[A-Za-zÃ±Ã‘'Ã¡Ã©Ã­Ã³ÃºÃÃ‰ÃÃ“ÃšÃ Ã¨Ã¬Ã²Ã¹Ã€ÃˆÃŒÃ’Ã™Ã¢ÃªÃ®Ã´Ã»Ã‚ÃŠÃŽÃ”Ã›Ã‘Ã±Ã¤Ã«Ã¯Ã¶Ã¼Ã„Ã‹ÃÃ–Ãœ\s\t]/;
-                let keyFromCode = String.fromCharCode(tecla);
-                return patron.test(keyFromCode);
-            }            
+            soloLetras(event) {
+                var regex = new RegExp("^[a-zA-Z ]+$");
+                var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+                if (!regex.test(key)) {
+                    event.preventDefault();
+                    return false;
+                }           
+            },
+            soloNum(e){
+                if (e.keyCode < 48 || e.keyCode > 57) {
+                    let value = e.keyCode;
+                    let v = e.returnValue;
+                    v = false;
+                    return v;
+                }
+            },            
         }
-    }
 </script>
 
 <style scoped>

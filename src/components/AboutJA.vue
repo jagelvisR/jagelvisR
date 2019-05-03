@@ -30,7 +30,7 @@
                   color="light-blue lighten-1"
                 >
                   <h3>{{ value }}</h3>
-                  <v-img :src="require('@/assets/vuetifyLogo.png')" width="100"></v-img>
+                  <v-img :src="require('@/assets/vuetifyLogo.svg')" height="100" width="90"></v-img>
                   <h4 class="white--text mt-2">Vuetify</h4>
                 </v-progress-circular>
 
@@ -42,7 +42,7 @@
                   color="green accent-3"
                 >
                   <h3>{{ value }}</h3>
-                  <v-img :src="require('@/assets/vueLogo.png')" width="100"></v-img>
+                  <v-img :src="require('@/assets/vueLogo.svg')" width="100"></v-img>
                   <h4 class="white--text mt-2">Vue.js</h4>
                 </v-progress-circular>
 
@@ -54,7 +54,7 @@
                   color="yellow lighten-1"
                 >
                   <h3>{{ value }}</h3>
-                  <v-img :src="require('@/assets/jsLogo.png')" width="100"></v-img>
+                  <v-img :src="require('@/assets/jsLogo.svg')" width="100"></v-img>
                   <h4 class="white--text mt-2">JavaScript</h4>
                 </v-progress-circular>
                 
@@ -66,7 +66,7 @@
                   color="red"
                 >
                   <h3>{{ value }}</h3>
-                  <v-img :src="require('@/assets/laravelLogo.png')" width="100"></v-img>
+                  <v-img :src="require('@/assets/laravelLogo.svg')" width="100"></v-img>
                   <h4 class="white--text mt-2">Laravel</h4>
                 </v-progress-circular>
 
@@ -78,7 +78,7 @@
                   color="green darken-4"
                 >
                   <h3>{{ value }}</h3>
-                  <v-img :src="require('@/assets/djangoLogo.png')" width="100"></v-img>
+                  <v-img :src="require('@/assets/djangoLogo.svg')" width="100"></v-img>
                   <h4 class="white--text mt-2">Django</h4>
                 </v-progress-circular>
                   
@@ -90,7 +90,7 @@
                   color="light-blue darken-3"
                 >
                   <h3>{{ value }}</h3>
-                  <v-img :src="require('@/assets/postgresLogo.png')" width="100"></v-img>
+                  <v-img :src="require('@/assets/postgresLogo.svg')" width="100"></v-img>
                   <h4 class="white--text mt-2">Postgresql</h4>
                 </v-progress-circular>
               </div>

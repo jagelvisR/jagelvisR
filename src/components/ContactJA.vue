@@ -8,7 +8,7 @@
                     <v-flex xs10 sm10 md6 lg6>
                         <v-card>
                             <v-card-text>
-                                <form @submit.prevent="addCoin">
+                                <form>
                                     <!--Name-->
                                     <v-text-field
                                         v-model="name"
@@ -70,7 +70,7 @@
                                         auto-grow
                                         name="input-7-1"
                                         label="Message"
-                                        @keyup="soloLetras"
+                                        
                                         >
                                     </v-textarea>
                             
@@ -126,7 +126,28 @@
                                 </v-btn>
                             </v-card-text>
                         </v-card>    
-                    </v-flex>    
+                    </v-flex>
+                    <!-- Snackbar para mensajes de alerta para envío de form-->
+                     <v-snackbar
+                        v-model="snackbar"
+                        :bottom="y === 'bottom'"
+                        :left="x === 'left'"
+                        :multi-line="mode === 'multi-line'"
+                        :right="x === 'right'"
+                        :timeout="timeout"
+                        :top="y === 'top'"
+                        :vertical="mode === 'vertical'"
+                        color="success"
+                        >
+                        {{ textAlert }}
+                            <v-btn
+                                color="white"
+                                flat
+                                @click="snackbar = false"
+                            >
+                                Close
+                            </v-btn>
+                        </v-snackbar>    
                 </v-layout>
             </v-container>
     </section>
@@ -138,7 +159,7 @@
     import { log } from 'util';
 
     import { db } from '../config/db';
-    
+
     export default {
         name: 'ContactJA',
             mixins: [validationMixin],
@@ -154,11 +175,15 @@
             },
             subject: { required, maxLength: maxLength(30) },
         },
-
+        firebase: { //conectar a db firebase json
+            jagelvisr: db.ref('jagelvisr')
+        },
         data: () => ({
+            //form contact
             name: '',
             email: '',
             select: null,
+            subject: '',
             tile: false,
             items: [
                 'Front-End',
@@ -168,8 +193,8 @@
                 'Other'
             ],
             checkbox: false,
-            subject: '',
             text: '',
+            //icons de redes sociales
             icons: [
                 {perfil:'fa-facebook-f', url: 'https://facebook.com/jagelvisR'},
                 {perfil:'fa-twitter', url: 'https://twitter.com/jagelvisR'},
@@ -178,6 +203,13 @@
                 {perfil:'fa-gitlab', url: 'https://gitlab.com/jagelvisR'},
                 {perfil:'fa-linkedin', url: 'https://www.linkedin.com/in/jos%C3%A9-agelvis-34a6aa158/'},
             ],
+            //Snackbar como alert al enviar form
+            snackbar: false,
+            y: 'top',
+            x: null,
+            mode: '',
+            timeout: 6000,
+            textAlert: 'Succeessfully added'
         }),
 
         computed: {
@@ -220,7 +252,7 @@
         methods: {
             submit () {
                 //this.$v.$touch()
-                this.$firebaseRefs.coins.push({
+                this.$firebaseRefs.jagelvisr.push({
                     name: this.name,
                     email: this.email,
                     select: this.select,
@@ -228,9 +260,15 @@
                     text: this.text,
                     checkbox: this.checkbox
                 });
-                clear();
-                alert("Succeessfully added");
-                } 
+                this.$v.$reset()
+                this.name = ''
+                this.email = ''
+                this.subject = ''
+                this.text = ''
+                this.select = null
+                this.checkbox = false
+                //Mostrar Alert
+                this.snackbar = true;
             },
             clear () {
                 this.$v.$reset()
@@ -262,6 +300,8 @@
                 }
             },            
         }
+    }    
+        
 </script>
 
 <style scoped>

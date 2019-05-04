@@ -20,6 +20,8 @@ import 'font-awesome/css/font-awesome.min.css'
 import VueScrollactive from 'vue-scrollactive';
 Vue.use(VueScrollactive);
 
+import firebase from 'firebase/app';
+Vue.use(firebase)
 
 import VueFire from 'vuefire'
 Vue.use(VueFire)

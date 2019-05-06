@@ -16,24 +16,28 @@
                         :key="`${index}`"
                         class="mt-4"
                     >
+                        <v-progress-circular
+                        :width="5"
+                        :size="150"
+                        color="red darken-4"
+                        indeterminate
+                        >
+                        <v-avatar
+                            :tile="tile"
+                            :size="avatarSize"
+                            color="grey darken-2"
+                        >
+                                    <i :class="`${serv.icon}`"></i>
+                        </v-avatar>                                    
                         
-                                <v-avatar
-                                :tile="tile"
-                                :size="avatarSize"
-                                color="red darken-4"
-                                >
-                                    <i color="white" :class="`${serv.icon}`"></i>
-                                </v-avatar>                                    
-                            
-                            <div class="mt-3">
+                        </v-progress-circular>   
+                        <div class="mt-3">
                                 <!-- Services name-->
                             
-                                <h5>{{serv.name}}</h5>
+                                <h4>{{serv.name}}</h4>
                                 <br>
-                            </div>
-                            
-                            
-                    
+                            </div>   
+                        
                     </v-flex>
                 </v-layout>
             </v-container>          
@@ -62,6 +66,7 @@
     }
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="stylus" scoped>
+  .v-progress-circular
+    margin: 1rem
 </style>

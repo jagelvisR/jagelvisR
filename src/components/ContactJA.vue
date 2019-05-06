@@ -13,7 +13,7 @@
                                     <v-text-field
                                         v-model="name"
                                         :error-messages="nameErrors"
-                                        :counter="10"
+                                        :counter="20"
                                         label="Name"
                                         box
                                         outline
@@ -127,9 +127,9 @@
                             </v-card-text>
                         </v-card>    
                     </v-flex>
-                    <!-- Snackbar para mensajes de alerta para envío de form-->
+                    <!-- Snackbar para mensajes de alerta para envío de form exitoso-->
                      <v-snackbar
-                        v-model="snackbar"
+                        v-model="snackbarSuccess"
                         :bottom="y === 'bottom'"
                         :left="x === 'left'"
                         :multi-line="mode === 'multi-line'"
@@ -139,15 +139,38 @@
                         :vertical="mode === 'vertical'"
                         color="success"
                         >
-                        {{ textAlert }}
+                        {{ textAlertSuccess }}
                             <v-btn
                                 color="white"
                                 flat
-                                @click="snackbar = false"
+                                @click="snackbarSuccess = false"
                             >
                                 Close
                             </v-btn>
-                        </v-snackbar>    
+                        </v-snackbar>   
+
+                        <!-- Snackbar para mensajes de alerta form vacio con error-->
+                     <v-snackbar
+                        v-model="snackbarDanger"
+                        :bottom="y === 'bottom'"
+                        :left="x === 'left'"
+                        :multi-line="mode === 'multi-line'"
+                        :right="x === 'right'"
+                        :timeout="timeout"
+                        :top="y === 'top'"
+                        :vertical="mode === 'vertical'"
+                        color="red"
+                        icon="warning"
+                        >
+                        {{ textAlertDanger }}
+                            <v-btn
+                                color="white"
+                                flat
+                                @click="snackbarDanger = false"
+                            >
+                                Close
+                            </v-btn>
+                        </v-snackbar>   
                 </v-layout>
             </v-container>
     </section>
@@ -203,13 +226,15 @@
                 {perfil:'fa-gitlab', url: 'https://gitlab.com/jagelvisR'},
                 {perfil:'fa-linkedin', url: 'https://www.linkedin.com/in/jos%C3%A9-agelvis-34a6aa158/'},
             ],
-            //Snackbar como alert al enviar form
-            snackbar: false,
-            y: 'top',
-            x: null,
-            mode: '',
-            timeout: 6000,
-            textAlert: 'Succeessfully added'
+            //Snackbar como alert al enviar form con succes y danger
+            snackbarSuccess: false,//form enviado
+            snackbarDanger: false,//form con error
+            y: 'bottom',
+            x: 'left',
+            mode: 'multi-line',
+            timeout: 6500,
+            textAlertSuccess: 'Form sent successfully',
+            textAlertDanger: 'Error: Please fill in the form fields',
         }),
 
         computed: {
@@ -252,23 +277,30 @@
         methods: {
             submit () {
                 //this.$v.$touch()
-                this.$firebaseRefs.jagelvisr.push({
+                if (this.name != '' && this.email != '' && this.subject != '' && this.text != '' && this.select != null && this.checkbox != false) {
+                    
+                    this.$firebaseRefs.jagelvisr.push({
                     name: this.name,
                     email: this.email,
                     select: this.select,
                     subject: this.subject,
                     text: this.text,
                     checkbox: this.checkbox
-                });
-                this.$v.$reset()
-                this.name = ''
-                this.email = ''
-                this.subject = ''
-                this.text = ''
-                this.select = null
-                this.checkbox = false
-                //Mostrar Alert
-                this.snackbar = true;
+                    });
+                    this.$v.$reset()
+                    this.name = '';
+                    this.email = '';
+                    this.subject = '';
+                    this.text = '';
+                    this.select = null;
+                    this.checkbox = false;
+                    //Mostrar Alert Success
+                    this.snackbarSuccess = true;
+                }
+                else {
+                    this.snackbarDanger = true;
+                }
+                
             },
             clear () {
                 this.$v.$reset()

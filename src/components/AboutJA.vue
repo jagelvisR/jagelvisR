@@ -26,10 +26,10 @@
                   :rotate="270"
                   :size="220"
                   :width="15"
-                  :value="value"
-                  color="light-blue lighten-1"
+                  :value="valueVuetify"
+                  :color="'light-blue lighten-1'"
                 >
-                  <h3>{{ value }}</h3>
+                  <h2 class="white--text"><b>{{ valueVuetify }}%</b></h2>
                   <v-img :src="require('@/assets/vuetifyLogo.svg')" height="100" width="90"></v-img>
                   <h4 class="white--text mt-2">Vuetify</h4>
                 </v-progress-circular>
@@ -38,10 +38,10 @@
                   :rotate="270"
                   :size="220"
                   :width="15"
-                  :value="value"
-                  color="green accent-3"
+                  :value="valueVue"
+                  :color="'green accent-3'"
                 >
-                  <h3>{{ value }}</h3>
+                  <h2 class="white--text"><b>{{ valueVue }}%</b></h2>
                   <v-img :src="require('@/assets/vueLogo.svg')" width="100"></v-img>
                   <h4 class="white--text mt-2">Vue.js</h4>
                 </v-progress-circular>
@@ -50,10 +50,10 @@
                   :rotate="270"
                   :size="220"
                   :width="15"
-                  :value="value"
-                  color="yellow lighten-1"
+                  :value="valueJavaScript"
+                  :color="'yellow lighten-1'"
                 >
-                  <h3>{{ value }}</h3>
+                  <h2 class="white--text"><b>{{ valueJavaScript }}%</b></h2>
                   <v-img :src="require('@/assets/jsLogo.svg')" width="100"></v-img>
                   <h4 class="white--text mt-2">JavaScript</h4>
                 </v-progress-circular>
@@ -62,10 +62,10 @@
                   :rotate="270"
                   :size="220"
                   :width="15"
-                  :value="value"
-                  color="red"
+                  :value="valueLaravel"
+                  :color="'red'"
                 >
-                  <h3>{{ value }}</h3>
+                  <h2 class="white--text"><b>{{ valueLaravel }}%</b></h2>
                   <v-img :src="require('@/assets/laravelLogo.svg')" width="100"></v-img>
                   <h4 class="white--text mt-2">Laravel</h4>
                 </v-progress-circular>
@@ -74,10 +74,10 @@
                   :rotate="270"
                   :size="220"
                   :width="15"
-                  :value="value"
-                  color="green darken-4"
+                  :value="valueDjango"
+                  :color="'green darken-4'"
                 >
-                  <h3>{{ value }}</h3>
+                  <h2 class="white--text"><b>{{ valueDjango }}%</b></h2>
                   <v-img :src="require('@/assets/djangoLogo.svg')" width="100"></v-img>
                   <h4 class="white--text mt-2">Django</h4>
                 </v-progress-circular>
@@ -86,10 +86,10 @@
                   :rotate="270"
                   :size="220"
                   :width="15"
-                  :value="value"
-                  color="light-blue darken-3"
+                  :value="valuePostgresql"
+                  :color="'light-blue darken-3'"
                 >
-                  <h3>{{ value }}</h3>
+                  <h2 class="white--text"><b>{{ valuePostgresql }}%</b></h2>
                   <v-img :src="require('@/assets/postgresLogo.svg')" width="100"></v-img>
                   <h4 class="white--text mt-2">Postgresql</h4>
                 </v-progress-circular>
@@ -155,7 +155,13 @@
     data () {
       return {
         interval: {},
-        value: 0
+        valueVuetify: 0,
+        valueVue: 0,
+        valueJavaScript: 0,
+        valueLaravel: 0,
+        valueDjango: 0,
+        valuePostgresql: 0,
+        color : '',
       }
     },
     beforeDestroy () {
@@ -163,11 +169,44 @@
     },
     mounted () {
       this.interval = setInterval(() => {
-        if (this.value === 100) {
-          return (this.value = 0)
+
+        if (this.valueVuetify === 80) {
+          return (this.valueVuetify = 80)
         }
-        this.value += 100
-      }, 1000)
+        
+        if (this.valueVue === 60) {
+          return (this.valueVue = 60)
+        }
+
+        if (this.valueJavaScript === 65) {
+          return (this.valueJavaScript = 65)
+        }
+
+        if (this.valueLaravel === 70) {
+          return (this.valueLaravel = 70)
+        }
+
+        if (this.valueDjango === 55) {
+          return (this.valueDjango = 55)
+        }
+
+        if (this.valuePostgresql === 75) {
+          return (this.valuePostgresql = 75)
+        }
+       
+          this.valueVuetify += 80;
+
+          this.valueVue += 60;
+
+          this.valueJavaScript += 65;
+
+          this.valueLaravel += 70;
+
+          this.valueDjango += 55;
+
+          this.valuePostgresql += 75;
+
+      }, 1500)
     }
   }
 </script>

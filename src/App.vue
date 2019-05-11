@@ -1,5 +1,5 @@
 <template>
-  <v-app id="app">
+  <v-app id="app" app>
         <AppHome/>
         <v-content transition="slide-x-transition">
             <router-view></router-view>

@@ -18,7 +18,7 @@
                     >
                         <v-progress-circular
                         :width="5"
-                        :size="150"
+                        :size="140"
                         color="red darken-4"
                         indeterminate
                         >
@@ -26,8 +26,15 @@
                             :tile="tile"
                             :size="avatarSize"
                             color="grey darken-2"
-                        >
-                                    <i :class="`${serv.icon}`"></i>
+                            size="115"
+                            >
+                            <v-avatar
+                                :tile="tile"
+                                :size="avatarSize"
+                                color="grey darken-3"
+                            >
+                                        <i :class="`${serv.icon}`"></i>
+                            </v-avatar>     
                         </v-avatar>                                    
                         
                         </v-progress-circular>   

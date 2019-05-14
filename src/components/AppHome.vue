@@ -33,13 +33,25 @@
                     :offset="80"
                     :duration="900"
                     bezier-easing-value=".5,0,.35,1">
-                    
-                    <v-btn 
-                        dark
+                     <!-- btn con flat sin contact Me-->
+                    <v-btn
+                        flat
                         :color="`${item.color}`" 
                         class="scrollactive-item nav-item" 
                         :href="`${item.scroll}`" 
                         @click="drawer = !drawer"
+                        v-if="item.scroll != '#ContactMe'"
+                    >
+                        {{ item.title }}
+                    </v-btn>
+                    <!-- btn sin flat para contact Me-->
+                    <v-btn
+                        
+                        :color="`${item.color}`" 
+                        class="scrollactive-item nav-item" 
+                        :href="`${item.scroll}`" 
+                        @click="drawer = !drawer"
+                        v-else
                     >
                         {{ item.title }}
                     </v-btn> 
@@ -84,10 +96,10 @@ export default {
             appTitle: 'José Agelvis',
             drawer: false,
             items: [
-                { title: 'Home', scroll: '#Home', color: 'grey darken-4'},
-                { title: 'About Me', scroll: '#AboutMe', color: 'grey darken-4' },
-                { title: 'Services', scroll: '#Services', color: 'grey darken-4' },
-                { title: 'Portfolio', scroll: '#Portfolio', color: 'grey darken-4' },
+                { title: 'Home', scroll: '#Home', color: ''},
+                { title: 'About Me', scroll: '#AboutMe', color: '' },
+                { title: 'Services', scroll: '#Services', color: '' },
+                { title: 'Portfolio', scroll: '#Portfolio', color: '' },
                 { title: 'Contact Me', scroll: '#ContactMe', color: 'red darken-4'  }
             ],
         }   

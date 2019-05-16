@@ -1,76 +1,150 @@
-<template>
+<template v-slot:opposite>
  <section id="AboutMe">
    <vContainer fluid>
      <!-- About ME-->
-    <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-2">About Me</h1>
+    <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-4">About Me</h1>
       <!-- About descripcion-->
      <v-layout row wrap>
-       <v-flex xs5>
+       <v-flex xs12>
          <v-card tile flat color="red darken-4">
            <v-card-text>
              <br>
-             <p>
+             <h5>
                 I'm José Agelvis Freelance Web Developer from Caracas, Venezuela. Student of VIII Semester of Ing. System of the National Polytechnic Experimental University of the National Armed Force (UNEFA). I am currently working in the same institution. Due to the monetary exchange value of the Venezuelan bolivar and US dollar, I have the opportunity to offer competitive rates. You have the opportunity to hire my services at a lower cost than a local junior web developer.
-             </p>
+             </h5>
            </v-card-text>
          </v-card>
-       </v-flex>
     
       <!-- Habilidades -->
      
-       <v-flex xs7>
-         <v-card tile flat color="white" class="black--text">
+         <v-card tile flat>
            <v-card-text>
-            <h3 class="font-weight-red darken-4--text text-xs-center mb-2 mt-2">Habilidades</h3>
+            <h3 class="font-weight-red darken-4--text text-xs-center mb-2 mt-2">Skills</h3>
               <div class="text-xs-center">
+
                 <v-progress-circular
-                  :rotate="360"
-                  :size="100"
+                  :rotate="270"
+                  :size="220"
                   :width="15"
-                  :value="value"
-                  color="teal"
+                  :value="valueVuetify"
+                  :color="'light-blue lighten-1'"
                 >
-                  <h4>{{ value }}</h4>
-                  <h5>Vue.js</h5>
+                  <h2 class="white--text"><b>{{ valueVuetify }}%</b></h2>
+                  <v-img :src="require('@/assets/vuetifyLogo.svg')" height="100" width="90"></v-img>
+                  <h4 class="white--text mt-2">Vuetify</h4>
                 </v-progress-circular>
 
                 <v-progress-circular
-                  :rotate="-90"
-                  :size="100"
+                  :rotate="270"
+                  :size="220"
                   :width="15"
-                  :value="value"
-                  color="primary"
+                  :value="valueVue"
+                  :color="'green accent-3'"
                 >
-                  <h4>{{ value }}</h4>
-                  <h5>JQuery</h5>
+                  <h2 class="white--text"><b>{{ valueVue }}%</b></h2>
+                  <v-img :src="require('@/assets/vueLogo.svg')" width="100"></v-img>
+                  <h4 class="white--text mt-2">Vue.js</h4>
                 </v-progress-circular>
 
                 <v-progress-circular
-                  :rotate="90"
-                  :size="100"
+                  :rotate="270"
+                  :size="220"
                   :width="15"
-                  :value="value"
-                  color="red"
+                  :value="valueJavaScript"
+                  :color="'yellow lighten-1'"
                 >
-                  <h4>{{ value }}</h4>
-                  <h5>Laravel</h5>
+                  <h2 class="white--text"><b>{{ valueJavaScript }}%</b></h2>
+                  <v-img :src="require('@/assets/jsLogo.svg')" width="100"></v-img>
+                  <h4 class="white--text mt-2">JavaScript</h4>
+                </v-progress-circular>
+                
+                <v-progress-circular
+                  :rotate="270"
+                  :size="220"
+                  :width="15"
+                  :value="valueLaravel"
+                  :color="'red'"
+                >
+                  <h2 class="white--text"><b>{{ valueLaravel }}%</b></h2>
+                  <v-img :src="require('@/assets/laravelLogo.svg')" width="100"></v-img>
+                  <h4 class="white--text mt-2">Laravel</h4>
                 </v-progress-circular>
 
                 <v-progress-circular
-                  :rotate="180"
-                  :size="100"
+                  :rotate="270"
+                  :size="220"
                   :width="15"
-                  :value="value"
-                  color="pink"
+                  :value="valueDjango"
+                  :color="'green darken-4'"
                 >
-                  <h4>{{ value }}</h4>
-                  <h5>Django</h5>
+                  <h2 class="white--text"><b>{{ valueDjango }}%</b></h2>
+                  <v-img :src="require('@/assets/djangoLogo.svg')" width="100"></v-img>
+                  <h4 class="white--text mt-2">Django</h4>
+                </v-progress-circular>
+                  
+                <v-progress-circular
+                  :rotate="270"
+                  :size="220"
+                  :width="15"
+                  :value="valuePostgresql"
+                  :color="'light-blue darken-3'"
+                >
+                  <h2 class="white--text"><b>{{ valuePostgresql }}%</b></h2>
+                  <v-img :src="require('@/assets/postgresLogo.svg')" width="100"></v-img>
+                  <h4 class="white--text mt-2">Postgresql</h4>
                 </v-progress-circular>
               </div>
            </v-card-text>
          </v-card>
        </v-flex>
      </v-layout>
+
+     <!-- Experiencia Laboral -->
+
+     <v-layout row wrap>
+        <v-flex xs12>
+          <h3 class="font-weight-red darken-4--text text-xs-center mb-2 mt-4">Experience</h3>
+          <v-timeline>
+            <v-timeline-item
+              v-for="n in 4"
+              :key="n"
+              color="red darken-4"
+              large
+            >    
+              <v-card class="elevation-2 grey darken-2">
+                <v-card-title class="headline red darken-4">Lorem ipsum</v-card-title>
+                  <v-card-text>
+                    Lorem ipsum dolor sit amet, no i nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
+                  </v-card-text>
+              </v-card>
+            </v-timeline-item>
+          </v-timeline>    
+        </v-flex>
+     </v-layout>
+
+     <!-- Educación -->
+
+    <v-layout row wrap tile class="grey darken-3">
+          <v-flex xs12>
+            <h3 class="font-weight-red darken-4--text text-xs-center mb-2 mt-4">Education</h3>
+            <v-timeline>
+              <v-timeline-item
+                v-for="n in 4"
+                :key="n"
+                color="red darken-4"
+                large
+              >    
+                <v-card class="elevation-2 grey darken-2">
+                  <v-card-title class="headline red darken-4">Lorem ipsum</v-card-title>
+                    <v-card-text>
+                      Lorem ipsum dolor sit amet, no i nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
+                    </v-card-text>
+                </v-card>
+              </v-timeline-item>
+            </v-timeline>    
+          </v-flex>  
+     </v-layout>
+
    </vContainer>
  </section>
 </template>
@@ -81,7 +155,13 @@
     data () {
       return {
         interval: {},
-        value: 0
+        valueVuetify: 0,
+        valueVue: 0,
+        valueJavaScript: 0,
+        valueLaravel: 0,
+        valueDjango: 0,
+        valuePostgresql: 0,
+        color : '',
       }
     },
     beforeDestroy () {
@@ -89,11 +169,44 @@
     },
     mounted () {
       this.interval = setInterval(() => {
-        if (this.value === 100) {
-          return (this.value = 0)
+
+        if (this.valueVuetify === 80) {
+          return (this.valueVuetify = 80)
         }
-        this.value += 100
-      }, 1000)
+        
+        if (this.valueVue === 60) {
+          return (this.valueVue = 60)
+        }
+
+        if (this.valueJavaScript === 65) {
+          return (this.valueJavaScript = 65)
+        }
+
+        if (this.valueLaravel === 70) {
+          return (this.valueLaravel = 70)
+        }
+
+        if (this.valueDjango === 55) {
+          return (this.valueDjango = 55)
+        }
+
+        if (this.valuePostgresql === 75) {
+          return (this.valuePostgresql = 75)
+        }
+       
+          this.valueVuetify += 80;
+
+          this.valueVue += 60;
+
+          this.valueJavaScript += 65;
+
+          this.valueLaravel += 70;
+
+          this.valueDjango += 55;
+
+          this.valuePostgresql += 75;
+
+      }, 1500)
     }
   }
 </script>

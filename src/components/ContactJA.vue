@@ -1,114 +1,240 @@
 <template>
-    <section id="ContactMe" color="danger">
-        <v-parallax :src="require('@/assets/fondocode.jpg')" height="800">
-            <v-container grid-list-md grid-list-sm fluid> 
+    <section id="ContactMe">
+            <v-container fluid grid-list-md text-xs-center> 
             <!-- Contact ME-->
-                <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-2">Contact Me</h1>
+                <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-4">Contact Me</h1>
                 <br>
-                <form>
-                <v-layout wrap>
-                    <v-flex xs6 md6 offset-3>
-                        <v-text-field
-                            v-model="name"
-                            :error-messages="nameErrors"
-                            :counter="10"
-                            label="Name"
-                            outline
-                            required
-                            @input="$v.name.$touch()"
-                            @blur="$v.name.$touch()"
-                        >
-                        </v-text-field>
+                <v-layout wrap row justify-center>
+                    <v-flex xs10 sm10 md6 lg6>
+                        <v-card>
+                            <v-card-text>
+                                <form>
+                                    <!--Name-->
+                                    <v-text-field
+                                        v-model="name"
+                                        :error-messages="nameErrors"
+                                        :counter="20"
+                                        label="Name"
+                                        box
+                                        outline
+                                        required
+                                        @input="$v.name.$touch()"
+                                        @blur="$v.name.$touch()"
+                                    >
+                                    </v-text-field>
+                                    <!--E-mail-->
+                                    <v-text-field
+                                        v-model="email"
+                                        :error-messages="emailErrors"
+                                        label="E-mail"
+                                        box
+                                        outline
+                                        required
+                                        @input="$v.email.$touch()"
+                                        @blur="$v.email.$touch()"
+                                    >
+                                    </v-text-field>
+                                    <!--Select item para servicio-->
+                                    <v-select
+                                        v-model="select"
+                                        :items="items"
+                                        :error-messages="selectErrors"
+                                        label="Item"
+                                        box
+                                        outline
+                                        required
+                                        @change="$v.select.$touch()"
+                                        @blur="$v.select.$touch()"
+                                    >
+                                    </v-select>
+                                    <!--Subject-->
+                                    <v-text-field
+                                        v-model="subject"
+                                        :error-messages="subjectErrors"
+                                        :counter="30"
+                                        label="Subject"
+                                        box
+                                        outline
+                                        required
+                                        @input="$v.subject.$touch()"
+                                        @blur="$v.subject.$touch()"
+                                    >
+                                    </v-text-field>
+                                    <!--Textarea Comment-->
+                                    <v-textarea
+                                        v-model="text"
+                                        outline
+                                        box
+                                        height="200"
+                                        cols="200"
+                                        auto-grow
+                                        name="input-7-1"
+                                        label="Message"
+                                        
+                                        >
+                                    </v-textarea>
+                            
+                                    <v-checkbox
+                                        v-model="checkbox"
+                                        :error-messages="checkboxErrors"
+                                        label="Do you agree?"
+                                        required
+                                        @change="$v.checkbox.$touch()"
+                                        @blur="$v.checkbox.$touch()"
+                                    >
+                                    </v-checkbox>
+                                
+                                    <v-btn @click="clear" color="warning" align-center justify-center>clear</v-btn>
+                                    <v-btn @click="submit" color="red darken-4" align-center justify-center>submit</v-btn>
+                                </form>
+                            </v-card-text>
+                        </v-card>    
                     </v-flex>
-                    <v-flex xs6 md6 offset-3>
-                        <v-text-field
-                            v-model="email"
-                            :error-messages="emailErrors"
-                            label="E-mail"
-                            outline
-                            required
-                            @input="$v.email.$touch()"
-                            @blur="$v.email.$touch()"
-                        >
-                        </v-text-field>
-                    </v-flex>
-                    <v-flex xs6 md4 offset-3>
-                        <v-select
-                            v-model="select"
-                            :items="items"
-                            :error-messages="selectErrors"
-                            label="Item"
-                            outline
-                            required
-                            @change="$v.select.$touch()"
-                            @blur="$v.select.$touch()"
-                        >
-                        </v-select>
-                    </v-flex>
-                    <v-flex xs6 md4 offset-3 grid-list-md>
-                        <v-textarea
-                            outline
-                            box
-                            height="200"
-                            cols="200"
-                            auto-grow
-                            name="input-7-1"
-                            label="Outline textarea"
+
+                    <!-- Columna 2 datos de contacto-->
+
+                    <v-flex xs10 sm10 md6 lg6 class="px-1">
+                        <v-card fluid tile flat>
+                            <v-card-text>
+                                <br>
+                                <p class="font-weight-medium"><i class="fa fa-map-marker fa-2x btn-circle btn-sm red darken-4"></i> Caracas, Venezuela</p>
+                                <br>
+                                <p class="font-weight-medium"><i class="fa fa-whatsapp fa-2x btn-circle btn-sm red darken-4"></i> +58 414 214 44 78</p>
+                                <br>
+                                <p class="font-weight-medium"><i class="fa fa-telegram fa-2x btn-circle btn-sm-x red darken-4"></i> +58 414 214 44 78</p>
+                            </v-card-text>
+                        </v-card>
+                            <!-- Redes sociales-->
+                        <v-card
+                            fluid
+                            flat
+                            tile
+                            class="red darken-4 white--text text-xs-center mt-2"
                             >
-                        </v-textarea>
-                    </v-flex> 
-                    <v-flex xs6 md4 offset-3>
-                        <v-checkbox
-                            v-model="checkbox"
-                            :error-messages="checkboxErrors"
-                            label="Do you agree?"
-                            required
-                            @change="$v.checkbox.$touch()"
-                            @blur="$v.checkbox.$touch()"
+                            <v-card-text>
+                                <v-btn
+                                    wrap
+                                    v-for="(icon, index) in icons"
+                                    :key="`${index}`"
+                                    class="mx-3 white--text"
+                                    icon
+                                    dark
+                                    target="_blank"
+                                    @click="abrirURL(`${icon.url}`)"
+                                >
+                                <v-icon size="24px">{{ icon.perfil }}</v-icon>
+                                </v-btn>
+                            </v-card-text>
+                        </v-card>    
+                    </v-flex>
+                    <!-- Snackbar para mensajes de alerta para envío de form exitoso-->
+                     <v-snackbar
+                        v-model="snackbarSuccess"
+                        :bottom="y === 'bottom'"
+                        :left="x === 'left'"
+                        :multi-line="mode === 'multi-line'"
+                        :right="x === 'right'"
+                        :timeout="timeout"
+                        :top="y === 'top'"
+                        :vertical="mode === 'vertical'"
+                        color="success"
                         >
-                        </v-checkbox>
-                    </v-flex>   
-                    <v-flex xs6 md6 sm6 xs2 offset-3 justify-center align-center row fill-height>
-                        <v-btn @click="clear" color="warning">clear</v-btn>
-                        <v-btn @click="submit" color="primary">submit</v-btn>
-                    </v-flex>    
+                        {{ textAlertSuccess }}
+                            <v-btn
+                                color="white"
+                                flat
+                                @click="snackbarSuccess = false"
+                            >
+                                Close
+                            </v-btn>
+                        </v-snackbar>   
+
+                        <!-- Snackbar para mensajes de alerta form vacio con error-->
+                     <v-snackbar
+                        v-model="snackbarDanger"
+                        :bottom="y === 'bottom'"
+                        :left="x === 'left'"
+                        :multi-line="mode === 'multi-line'"
+                        :right="x === 'right'"
+                        :timeout="timeout"
+                        :top="y === 'top'"
+                        :vertical="mode === 'vertical'"
+                        color="red"
+                        icon="warning"
+                        >
+                        {{ textAlertDanger }}
+                            <v-btn
+                                color="white"
+                                flat
+                                @click="snackbarDanger = false"
+                            >
+                                Close
+                            </v-btn>
+                        </v-snackbar>   
                 </v-layout>
-                </form>
             </v-container>
-        </v-parallax>    
     </section>
 </template>
 
 <script>
-  import { validationMixin } from 'vuelidate'
-  import { required, maxLength, email } from 'vuelidate/lib/validators'
+    import { validationMixin } from 'vuelidate'
+    import { required, maxLength, email } from 'vuelidate/lib/validators'
+    import { log } from 'util';
+
+    import { db } from '../config/db';
 
     export default {
         name: 'ContactJA',
             mixins: [validationMixin],
 
         validations: {
-            name: { required, maxLength: maxLength(10) },
+            name: { required, maxLength: maxLength(20) },
             email: { required, email },
             select: { required },
             checkbox: {
                 checked (val) {
                 return val
                 }
-            }
+            },
+            subject: { required, maxLength: maxLength(30) },
         },
-
+        firebase: { //conectar a db firebase json
+            jagelvisr: db.ref('jagelvisr')
+        },
         data: () => ({
+            //form contact
             name: '',
             email: '',
             select: null,
+            subject: '',
+            tile: false,
             items: [
-                'Item 1',
-                'Item 2',
-                'Item 3',
-                'Item 4'
+                'Front-End',
+                'Back-End',
+                'Database',
+                'E-Commerce',
+                'Other'
             ],
-            checkbox: false
+            checkbox: false,
+            text: '',
+            //icons de redes sociales
+            icons: [
+                {perfil:'fa-facebook-f', url: 'https://facebook.com/jagelvisR'},
+                {perfil:'fa-twitter', url: 'https://twitter.com/jagelvisR'},
+                {perfil:'fa-instagram', url: 'https://instagram.com/jagelvisR'},
+                {perfil:'fa-github', url: 'https://github.com/jagelvisR'},
+                {perfil:'fa-gitlab', url: 'https://gitlab.com/jagelvisR'},
+                {perfil:'fa-linkedin', url: 'https://www.linkedin.com/in/jos%C3%A9-agelvis-34a6aa158/'},
+            ],
+            //Snackbar como alert al enviar form con succes y danger
+            snackbarSuccess: false,//form enviado
+            snackbarDanger: false,//form con error
+            y: 'bottom',
+            x: 'left',
+            mode: 'multi-line',
+            timeout: 6500,
+            textAlertSuccess: 'Form sent successfully',
+            textAlertDanger: 'Error: Please fill in the form fields',
         }),
 
         computed: {
@@ -124,7 +250,7 @@
                 !this.$v.select.required && errors.push('Item is required')
                 return errors
             },
-            nameErrors () {
+            nameErrors ( ) {
                 const errors = []
                 if (!this.$v.name.$dirty) return errors
                 !this.$v.name.maxLength && errors.push('Name must be at most 10 characters long')
@@ -132,28 +258,112 @@
                 return errors
             },
             emailErrors () {
-                const errors = []
+                const errors = [] 
                 if (!this.$v.email.$dirty) return errors
                 !this.$v.email.email && errors.push('Must be valid e-mail')
                 !this.$v.email.required && errors.push('E-mail is required')
                 return errors
-            }
+            },
+            subjectErrors () {
+                const errors = []
+                if (!this.$v.subject.$dirty) return errors
+                !this.$v.subject.maxLength && errors.push('Subject must be at most 30 characters long')
+                !this.$v.subject.required && errors.push('Subject is required.')
+                return errors
+            },
+            
+
         },
         methods: {
             submit () {
-                this.$v.$touch()
+                //this.$v.$touch()
+                if (this.name != '' && this.email != '' && this.subject != '' && this.text != '' && this.select != null && this.checkbox != false) {
+                    
+                    this.$firebaseRefs.jagelvisr.push({
+                    name: this.name,
+                    email: this.email,
+                    select: this.select,
+                    subject: this.subject,
+                    text: this.text,
+                    checkbox: this.checkbox
+                    });
+                    this.$v.$reset()
+                    this.name = '';
+                    this.email = '';
+                    this.subject = '';
+                    this.text = '';
+                    this.select = null;
+                    this.checkbox = false;
+                    //Mostrar Alert Success
+                    this.snackbarSuccess = true;
+                }
+                else {
+                    this.snackbarDanger = true;
+                }
+                
             },
             clear () {
                 this.$v.$reset()
                 this.name = ''
                 this.email = ''
+                this.subject = ''
+                this.text = ''
                 this.select = null
                 this.checkbox = false
-            }
+            },
+            abrirURL(url) { //Abrir url de mis redes sociales en otra pestaña
+                return window.open(url);
+            },
+            //prohibir determinados caracteres
+            soloLetras(event) {
+                var regex = new RegExp("^[a-zA-Z ]+$");
+                var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+                if (!regex.test(key)) {
+                    event.preventDefault();
+                    return false;
+                }           
+            },
+            soloNum(e){
+                if (e.keyCode < 48 || e.keyCode > 57) {
+                    let value = e.keyCode;
+                    let v = e.returnValue;
+                    v = false;
+                    return v;
+                }
+            },            
         }
-    }
+    }    
+        
 </script>
 
 <style scoped>
 
+/*btn circulares*/
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+.btn-circle.btn-sm {
+  width: 30px;
+  height: 30px;
+  padding: 4px 2px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+
+.btn-circle.btn-sm-x {
+  width: 30px;
+  height: 30px;
+  padding: 2px 0px;
+  font-size: 20px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
 </style>

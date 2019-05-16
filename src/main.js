@@ -8,6 +8,7 @@ import store from './store'
 
 
 
+
 //import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 //import '@mdi/font/css/materialdesignicons.css';
@@ -18,6 +19,13 @@ import 'font-awesome/css/font-awesome.min.css'
 
 import VueScrollactive from 'vue-scrollactive';
 Vue.use(VueScrollactive);
+
+import firebase from 'firebase/app';
+Vue.use(firebase)
+
+import VueFire from 'vuefire'
+Vue.use(VueFire)
+
 
 Vue.config.productionTip = false
 

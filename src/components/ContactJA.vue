@@ -84,8 +84,23 @@
                                     >
                                     </v-checkbox>
                                 
-                                    <v-btn @click="clear" color="warning" align-center justify-center>clear</v-btn>
-                                    <v-btn @click="submit" color="red darken-4" align-center justify-center>submit</v-btn>
+                                    <v-btn
+                                        @click="clear" 
+                                        color="warning" 
+                                        align-center 
+                                        justify-center>
+                                    clear
+                                    </v-btn>
+                                    
+                                    <v-btn 
+                                        @click="submit" 
+                                        color="red darken-4" 
+                                        align-center 
+                                        justify-center 
+                                        :loading="loading"
+                                        :disabled="loading">
+                                    submit
+                                    </v-btn>
                                 </form>
                             </v-card-text>
                         </v-card>    
@@ -128,7 +143,7 @@
                         </v-card>    
                     </v-flex>
                     <!-- Snackbar para mensajes de alerta para envío de form exitoso-->
-                     <v-snackbar
+                    <v-snackbar
                         v-model="snackbarSuccess"
                         :bottom="y === 'bottom'"
                         :left="x === 'left'"
@@ -139,7 +154,14 @@
                         :vertical="mode === 'vertical'"
                         color="success"
                         >
-                        {{ textAlertSuccess }}
+                        <v-icon
+                            right
+                            dark
+                            size="40"
+                        >
+                        check
+                        </v-icon>
+                         {{ textAlertSuccess }}
                             <v-btn
                                 color="white"
                                 flat
@@ -160,9 +182,15 @@
                         :top="y === 'top'"
                         :vertical="mode === 'vertical'"
                         color="red"
-                        icon="warning"
                         >
-                        {{ textAlertDanger }}
+                        <v-icon
+                            right
+                            dark
+                            size="40"
+                        >
+                        cancel
+                        </v-icon>
+                         {{ textAlertDanger }}
                             <v-btn
                                 color="white"
                                 flat
@@ -230,13 +258,15 @@
             snackbarSuccess: false,//form enviado
             snackbarDanger: false,//form con error
             y: 'bottom',
-            x: 'left',
+            x: 'right',
             mode: 'multi-line',
             timeout: 6500,
             textAlertSuccess: 'Form sent successfully',
             textAlertDanger: 'Error: Please fill in the form fields',
+            //loading
+            loader: null,
+            loading: false,
         }),
-
         computed: {
             checkboxErrors () {
                 const errors = []
@@ -253,7 +283,7 @@
             nameErrors ( ) {
                 const errors = []
                 if (!this.$v.name.$dirty) return errors
-                !this.$v.name.maxLength && errors.push('Name must be at most 10 characters long')
+                !this.$v.name.maxLength && errors.push('Name must be at most 20 characters long')
                 !this.$v.name.required && errors.push('Name is required.')
                 return errors
             },
@@ -272,20 +302,19 @@
                 return errors
             },
             
-
         },
         methods: {
-            submit () {
-                //this.$v.$touch()
+            submit() {                
+                //submit form al hacer loading
                 if (this.name != '' && this.email != '' && this.subject != '' && this.text != '' && this.select != null && this.checkbox != false) {
                     
-                    this.$firebaseRefs.jagelvisr.push({
+                    this.$firebaseRefs.jagelvisr.push({//enviar datos a Firebase
                     name: this.name,
                     email: this.email,
-                    select: this.select,
+                    service: this.select,
                     subject: this.subject,
-                    text: this.text,
-                    checkbox: this.checkbox
+                    message: this.text,
+                    acuerdo: this.checkbox
                     });
                     this.$v.$reset()
                     this.name = '';
@@ -298,9 +327,10 @@
                     this.snackbarSuccess = true;
                 }
                 else {
+                    
                     this.snackbarDanger = true;
+
                 }
-                
             },
             clear () {
                 this.$v.$reset()
@@ -366,4 +396,42 @@
   line-height: 1.33;
   border-radius: 25px;
 }
+
+/*boton loeading*/
+  .custom-loader {
+    animation: loader 1s infinite;
+    display: flex;
+  }
+  @-moz-keyframes loader {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes loader {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @-o-keyframes loader {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes loader {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 </style>

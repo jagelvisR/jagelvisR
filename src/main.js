@@ -26,6 +26,10 @@ Vue.use(firebase)
 import VueFire from 'vuefire'
 Vue.use(VueFire)
 
+import VueParticles from 'vue-particles'
+Vue.use(VueParticles)
+        
+
 
 Vue.config.productionTip = false
 

@@ -26,11 +26,10 @@
                             :tile="tile"
                             :size="avatarSize"
                             color="grey darken-2"
-                            size="115"
                             >
                             <v-avatar
                                 :tile="tile"
-                                :size="avatarSize"
+                                :size="avatarSize2"
                                 color="grey darken-3"
                             >
                                         <i :class="`${serv.icon}`"></i>
@@ -55,7 +54,8 @@
     export default {
         name: 'ServicesJA',
             data: () => ({
-                slider: 100,
+                slider: 115,
+                slider2: 100,
                 tile: false,
                 service: [
                     {icon: 'fa fa-code fa-4x', name:'Front-End'},
@@ -68,6 +68,9 @@
             computed: {
             avatarSize () {
                 return `${this.slider}px`
+            },
+            avatarSize2 () {
+                return `${this.slider2}px`
             }
         }
     }

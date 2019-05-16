@@ -18,7 +18,7 @@
                     >
                         <v-progress-circular
                         :width="5"
-                        :size="140"
+                        :size="120"
                         color="red darken-4"
                         indeterminate
                         >

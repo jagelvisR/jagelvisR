@@ -1,6 +1,27 @@
 <template>
-    <section class="wrap-banner" id="app">
-            <div grid-list-md text-xs-center class="main-title">
+    <section app dark>
+        <!-- Grafos efect vue-particles-->
+        <vue-particles
+            color="#ffffff"
+            :particleOpacity="0.7"
+            linesColor="#ffffff"
+            :particlesNumber="80"
+            shapeType="circle"
+            :particleSize="5"
+            :linesWidth="2"
+            :lineLinked="true"
+            :lineOpacity="0.4"
+            :linesDistance="150"
+            :moveSpeed="3"
+            :hoverEffect="true"
+            hoverMode="grab"
+            :clickEffect="false"
+            clickMode="push"
+            class="particles-js"
+            >
+        </vue-particles>
+        <!-- Content HomeJA-->
+            <v-container grid-list-md text-xs-center>
                
                 <v-layout 
                     justify-center 
@@ -38,6 +59,7 @@
                         dark
                         target="_blank"
                         @click="abrirURL(`${icon.url}`)"
+                        style=""
                         >
                             <v-icon large color="white" size="30px">{{ icon.perfil }}</v-icon>
                         </v-btn>
@@ -53,7 +75,6 @@
                     >    
                     <v-btn 
                     justify-center 
-                    align="center" 
                     wrap
                     icon
                     dark
@@ -63,25 +84,7 @@
                         <v-icon large color="white" size="30px">fa-angle-double-down</v-icon>
                     </v-btn>
                 </scrollactive>
-                <vue-particles
-                color="#ffffff"
-                :particleOpacity="0.7"
-                linesColor="#ffffff"
-                :particlesNumber="80"
-                shapeType="circle"
-                :particleSize="5"
-                :linesWidth="2"
-                :lineLinked="true"
-                :lineOpacity="0.4"
-                :linesDistance="150"
-                :moveSpeed="3"
-                :hoverEffect="true"
-                hoverMode="grab"
-                :clickEffect="true"
-                clickMode="push"
-                > 
-            </vue-particles>    
-            </div>
+            </v-container>
     </section>
 </template>
 
@@ -118,36 +121,15 @@ export default {
 
 <style scoped>
 
- .main-section {
-    max-width: 650px;
-    margin: auto;
-    padding: 0 1rem;
-  }
-  .main-title {
-    color: #fff;
-    z-index: 999;
-  }
 
- .wrap-banner {
-    position: relative;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -webkit-flex;
-    display: flex;
+ .particles-js {
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    justify-content: center;
-  }
-
-  #app {
-    height: 100%;
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-  }
-
+}
 
 /*btn circulares*/
 .btn-circle {
@@ -179,70 +161,5 @@ export default {
 /* boton de secciones*/
 
 
-.pinkBg {
-    background-color: #ed184f!important;
-    background-image: linear-gradient(90deg, #fd5581, #fd8b55);
-}
-.intro-banner-vdo-play-btn{
-    /*height:60px;*/
-    /*width:60px;*/
-    /*position:absolute;*/
-    /*top:50%;*/
-    /*left:50%;*/
-    text-align:center;
-    margin:-30px 0 0 -30px;
-    border-radius:100px;
-    z-index:1
-}
-.intro-banner-vdo-play-btn i{
-    line-height:56px;
-    font-size:30px
-}
-.intro-banner-vdo-play-btn .ripple{
-    position:absolute;
-    width:160px;
-    height:160px;
-    z-index:-1;
-    left:50%;
-    top:50%;
-    opacity:0;
-    margin:-80px 0 0 -80px;
-    border-radius:100px;
-    -webkit-animation:ripple 1.8s infinite;
-    animation:ripple 1.8s infinite
-}
-
-@-webkit-keyframes ripple{
-    0%{
-        opacity:1;
-        -webkit-transform:scale(0);
-        transform:scale(0)
-    }
-    100%{
-        opacity:0;
-        -webkit-transform:scale(1);
-        transform:scale(1)
-    }
-}
-@keyframes ripple{
-    0%{
-        opacity:1;
-        -webkit-transform:scale(0);
-        transform:scale(0)
-    }
-    100%{
-        opacity:0;
-        -webkit-transform:scale(1);
-        transform:scale(1)
-    }
-}
-.intro-banner-vdo-play-btn .ripple:nth-child(2){
-    animation-delay:.3s;
-    -webkit-animation-delay:.3s
-}
-.intro-banner-vdo-play-btn .ripple:nth-child(3){
-    animation-delay:.6s;
-    -webkit-animation-delay:.6s
-}
 
 </style>

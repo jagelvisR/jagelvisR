@@ -58,9 +58,9 @@
                 slider2: 100,
                 tile: false,
                 service: [
-                    {icon: 'fa fa-code fa-4x', name:'Front-End'},
-                    {icon: 'fa fa-laptop fa-4x', name:'Back-End'},
-                    {icon: 'fa fa-database fa-4x', name:'Database'},
+                    {icon: 'fa fa-code fa-4x', name:'Websites'},
+                    {icon: 'fa fa-laptop fa-4x', name:'Web applications'},
+                    {icon: 'fa fa-shopping-cart fa-4x', name:'Marketplace'},
                     {icon: 'fa fa-cart-plus fa-4x', name:'E-Commerce'},
                 ]
             }),

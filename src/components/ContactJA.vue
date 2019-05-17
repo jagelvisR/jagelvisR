@@ -237,9 +237,9 @@
             subject: '',
             tile: false,
             items: [
-                'Front-End',
-                'Back-End',
-                'Database',
+                'Websites',
+                'Web applications',
+                'Marketplace',
                 'E-Commerce',
                 'Other'
             ],

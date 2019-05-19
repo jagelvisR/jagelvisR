@@ -70,7 +70,7 @@
                                         auto-grow
                                         name="input-7-1"
                                         label="Message"
-                                        
+                                        required
                                         >
                                     </v-textarea>
                             
@@ -112,11 +112,42 @@
                         <v-card fluid tile flat>
                             <v-card-text>
                                 <br>
+                                <v-btn
+                                    v-for="(contact, index) in contact"
+                                    :key="`${index}`"
+                                    @click="abrirURL(`${contact.url}`)"
+                                    target="_blank"
+                                    class="red darken-4"
+                                    >
+                                    <!--svg WP-->
+                                    <v-img
+                                        v-if="contact.message == 'WhatsApp'"
+                                        :src="require('@/assets/whatsapp.svg')" 
+                                        height="25"
+                                        width="25"
+                                        >
+                                    </v-img>
+                                    <!--svg Telegram-->
+                                    <v-img
+                                        v-if="contact.message == 'Telegram'"
+                                        :src="require('@/assets/telegram.svg')" 
+                                        height="25"
+                                        width="25"
+                                        >
+                                    </v-img>
+                                    <!--svg Telegram-->
+                                    <v-img
+                                        v-if="contact.message == 'Gmail'"
+                                        :src="require('@/assets/gmail.svg')" 
+                                        height="25"
+                                        width="25"
+                                        >
+                                    </v-img>
+                                        {{contact.message}}
+                                    </v-btn>
+                                <br>
+                                <br>
                                 <p class="font-weight-medium"><i class="fa fa-map-marker fa-2x btn-circle btn-sm red darken-4"></i> Caracas, Venezuela</p>
-                                <br>
-                                <p class="font-weight-medium"><i class="fa fa-whatsapp fa-2x btn-circle btn-sm red darken-4"></i> +58 414 214 44 78</p>
-                                <br>
-                                <p class="font-weight-medium"><i class="fa fa-telegram fa-2x btn-circle btn-sm-x red darken-4"></i> +58 414 214 44 78</p>
                             </v-card-text>
                         </v-card>
                             <!-- Redes sociales-->
@@ -221,7 +252,7 @@
             select: { required },
             checkbox: {
                 checked (val) {
-                return val
+                    return val
                 }
             },
             subject: { required, maxLength: maxLength(30) },
@@ -266,6 +297,13 @@
             //loading
             loader: null,
             loading: false,
+            //Contact me wp, telegram y gmail
+            contact: [
+                {message: 'WhatsApp', url: 'https://wa.me/584142144478'},
+                {message: 'Telegram', url: 'https://t.me/jagelvisr'},
+                {message: 'Gmail', url: 'mailto:agelvisbusinessdeveloper@gmail.com'},
+            ],
+
         }),
         computed: {
             checkboxErrors () {

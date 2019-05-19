@@ -135,7 +135,7 @@
                                         width="25"
                                         >
                                     </v-img>
-                                    <!--svg Telegram-->
+                                    <!--svg Gmail-->
                                     <v-img
                                         v-if="contact.message == 'Gmail'"
                                         :src="require('@/assets/gmail.svg')" 

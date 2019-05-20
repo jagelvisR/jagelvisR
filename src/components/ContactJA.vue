@@ -117,34 +117,39 @@
                                     :key="`${index}`"
                                     @click="abrirURL(`${contact.url}`)"
                                     target="_blank"
-                                    class="red darken-4"
+                                    icon
+                                    flat
+                                    color="red darken-4"
+                                    class="mx-5"
+                                    dark
                                     >
                                     <!--svg WP-->
                                     <v-img
                                         v-if="contact.message == 'WhatsApp'"
                                         :src="require('@/assets/whatsapp.svg')" 
-                                        height="25"
-                                        width="25"
+                                        height="60"
+                                        width="60"
                                         >
                                     </v-img>
                                     <!--svg Telegram-->
                                     <v-img
                                         v-if="contact.message == 'Telegram'"
                                         :src="require('@/assets/telegram.svg')" 
-                                        height="25"
-                                        width="25"
+                                        height="60"
+                                        width="60"
                                         >
                                     </v-img>
                                     <!--svg Gmail-->
                                     <v-img
                                         v-if="contact.message == 'Gmail'"
                                         :src="require('@/assets/gmail.svg')" 
-                                        height="25"
-                                        width="25"
+                                        height="60"
+                                        width="60"
                                         >
                                     </v-img>
-                                        {{contact.message}}
+                                    <br>
                                     </v-btn>
+                                    <p></p>
                                 <br>
                                 <br>
                                 <p class="font-weight-medium"><i class="fa fa-map-marker fa-2x btn-circle btn-sm red darken-4"></i> Caracas, Venezuela</p>

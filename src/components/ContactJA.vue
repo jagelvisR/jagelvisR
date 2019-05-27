@@ -344,6 +344,7 @@
                 !this.$v.subject.required && errors.push('Subject is required.')
                 return errors
             },
+              
             
         },
         methods: {
@@ -390,20 +391,21 @@
             //prohibir determinados caracteres
             soloLetras(event) {
                 var regex = new RegExp("^[a-zA-Z ]+$");
-                var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+                this.text = String.fromCharCode(!event.charCode ? event.which : event.charCode);
                 if (!regex.test(key)) {
                     event.preventDefault();
                     return false;
                 }           
             },
-            soloNum(e){
-                if (e.keyCode < 48 || e.keyCode > 57) {
-                    let value = e.keyCode;
-                    let v = e.returnValue;
+            soloNum(event){
+                if (event.keyCode < 48 || event.keyCode > 57) {
+                    let value = event.keyCode;
+                    let v = event.returnValue;
                     v = false;
                     return v;
                 }
-            },            
+            },
+                      
         }
     }    
         

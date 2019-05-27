@@ -13,8 +13,8 @@
             <v-list class="pa-1 mt-2" dense>
                     <v-list-tile avatar>
                         <v-list-tile-avatar>
-                            <img :src="require('@/assets/jagelvisR.jpeg')" height="600">
-                    </v-list-tile-avatar>
+                            <img :src="require('@/assets/jagelvisR.jpeg')" >
+                        </v-list-tile-avatar>
 
                     <v-list-tile-content>
                         <v-list-tile-title>{{appTitle}}</v-list-tile-title>

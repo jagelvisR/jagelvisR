@@ -1,6 +1,6 @@
 <template>
     <section app dark>
-        <!-- Grafos efect vue-particles-->
+        <!-- Grafos efect vue-particles con css en toda la template-->
         <vue-particles
             color="#ffffff"
             :particleOpacity="0.7"

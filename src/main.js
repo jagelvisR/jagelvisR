@@ -28,8 +28,11 @@ Vue.use(VueFire)
 
 import VueParticles from 'vue-particles'
 Vue.use(VueParticles)
-        
 
+
+import BackToTop from 'vue-backtotop'
+Vue.use(BackToTop)
+        
 
 Vue.config.productionTip = false
 

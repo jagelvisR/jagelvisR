@@ -2,16 +2,24 @@
   <v-app id="app" app dark>
         <v-content transition="slide-x-transition">
             <router-view></router-view>
-            <back-to-top visibleoffset="150">
-                <v-btn 
+            <back-to-top 
+                visibleoffset="150"
+                bottom="75px" 
+                right="05px"
+                >
+                <v-btn
+                    id="lateral"
                     justify-center 
                     wrap
                     icon
                     dark
-                    class="red darken-4 mt-5 btn-to-top"
+                    bottom
+                    fab
+                    class="red darken-3 btn-to-top"
+                    
                     >
-                        <v-icon large color="white" size="40px">keyboard_arrow_up</v-icon>
-                    </v-btn>
+                        <v-icon large color="white">keyboard_arrow_up</v-icon>
+                </v-btn>
             </back-to-top>
         </v-content>
     </v-app>
@@ -39,5 +47,14 @@ export default {
   font-size: 22px;
   line-height: 22px;
 }
+
+/* This is for documentation purposes and will not be needed in your application */
+  #lateral .v-speed-dial,
+  #lateral .v-btn--floating {
+    position: absolute;
+  }
+  #lateral .v-btn--floating {
+    margin: 0 0 16px 16px;
+  }
 
 </style>

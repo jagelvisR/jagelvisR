@@ -120,7 +120,7 @@
                                     icon
                                     flat
                                     color="red darken-4"
-                                    class="mx-5"
+                                    class="mx-5 mt-5"
                                     dark
                                     >
                                     <!--svg WP-->

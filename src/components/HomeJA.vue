@@ -46,7 +46,7 @@
                     <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-2">
                         José <b class="">Agelvis</b></h1>
                     <div class="display-1 font-weight-bold white--text text-xs-center">
-                        Desarollador Web - Freelance
+                        Desarollador Web
                     </div>            
                     <!-- btn redes sociales-->    
                     <v-btn 

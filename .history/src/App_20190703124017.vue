@@ -35,7 +35,7 @@ export default {
       this.fab = top > 20;
     },
     toTop () {
-      this.$vuetify.goTo("#Home", { duration: 900 });//scroll return + duracion
+      this.$vuetify.goTo("#Home", { duration: 900 });
     }
   }
 };

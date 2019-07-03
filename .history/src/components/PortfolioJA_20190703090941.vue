@@ -3,14 +3,14 @@
       <v-container grid-list-md fluid> 
           <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-4">Portfolio</h1>
             <v-tabs
-                v-model="active"
-                color="grey darken-4"
-                dark
-                slider-color="red darken-4"
-                fixed-tabs
+            v-model="active"
+            color="grey darken-4"
+            dark
+            slider-color="red darken-4"
+            fixed-tabs
             >
             <v-tab
-                v-for="n in 4"
+                v-for="n in items"
                 :key="n"
                 ripple
             >
@@ -18,14 +18,16 @@
 
             </v-tab>
             <v-tab-item
-                v-for="(n, i) in items"
-                :key="i"
+                v-for="n in items"
+                :key="n"
             >
                 <v-card
                     flat
                 >
-                    <v-card-text aling-center>
-                        <v-img :src="n.src" height="100" width="90"></v-img>
+                    <v-card-text>
+                        {{ text }}
+                        <br>
+
                     </v-card-text>
                 </v-card>
             </v-tab-item>
@@ -41,13 +43,16 @@
                 return {
                     items: [
                     {
-                        src: require('@/assets/vuetifyLogo.svg')
+                        src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'
                     },
                     {
-                        src: require('@/assets/djangoLogo.svg')
+                        src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
                     },
                     {
-                        src: require('@/assets/vueLogo.svg')
+                        src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
+                    },
+                    {
+                        src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
                     }
                 ],
                 portfolios: [

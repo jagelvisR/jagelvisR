@@ -12,6 +12,7 @@
               right
               color="red darken-3"
               @click="toTop"
+              class="scroll"
             >
               <v-icon>keyboard_arrow_up</v-icon>
           </v-btn>
@@ -35,7 +36,7 @@ export default {
       this.fab = top > 20;
     },
     toTop () {
-      this.$vuetify.goTo("#Home", { duration: 900 });//scroll return + duracion
+      this.$vuetify.goTo("#Home", { duration: 900 })
     }
   }
 };

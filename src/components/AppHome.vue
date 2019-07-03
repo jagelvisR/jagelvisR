@@ -1,26 +1,28 @@
 <template>
     <section id="Home">
         <v-navigation-drawer 
-        app 
-        v-model="drawer" 
-        class="grey darken-4" 
-        dark 
-        temporary
-        width="200"
-        clipped
-        fixed
+            app 
+            v-model="drawer" 
+            class="grey darken-4" 
+            dark 
+            temporary
+            width="200"
+            clipped
+            fixed
         >
-            <v-list class="pa-1 mt-2" dense>
-                    <v-list-tile avatar>
-                        <v-list-tile-avatar>
-                            <img :src="require('@/assets/jagelvisR.jpeg')" >
-                        </v-list-tile-avatar>
-
-                    <v-list-tile-content>
-                        <v-list-tile-title>{{appTitle}}</v-list-tile-title>
-                    </v-list-tile-content>
+            <v-list 
+                class="pa-1 mt-2" 
+                dense
+            >
+                <v-list-tile avatar>
+                    <v-list-tile-avatar>
+                        <img :src="require('@/assets/jagelvisR.jpeg')" >
+                    </v-list-tile-avatar>
+                <v-list-tile-content>
+                    <v-list-tile-title>{{appTitle}}</v-list-tile-title>
+                </v-list-tile-content>
                 </v-list-tile>
-                <v-divider></v-divider>
+            <v-divider></v-divider>
             </v-list>
                 
             <v-list
@@ -28,13 +30,14 @@
                 :key="item.title"
                 class="pt-0" 
                 dense
-                >
+            >
                 <scrollactive 
                     class="my-nav" 
                     active-class="active"
                     :offset="80"
                     :duration="900"
-                    bezier-easing-value=".5,0,.35,1">
+                    bezier-easing-value=".5,0,.35,1"
+                >
                      <!-- btn con flat sin contact Me-->
                     <v-btn
                         flat
@@ -48,7 +51,6 @@
                     </v-btn>
                     <!-- btn sin flat para contact Me-->
                     <v-btn
-                        
                         :color="`${item.color}`" 
                         class="scrollactive-item nav-item" 
                         :href="`${item.scroll}`" 
@@ -71,10 +73,10 @@
             bezier-easing-value=".5,0,.35,1"
         >
             <v-toolbar 
-            app 
-            color="grey darken-4" 
-            dark 
-            class="white"
+                app 
+                color="grey darken-4" 
+                dark 
+                class="white"
             >
                 <v-toolbar-side-icon 
                     class="hidden-md-and-up" 
@@ -124,5 +126,6 @@ a {
     color: red;
     text-decoration: none;
 }
+
 </style>
 

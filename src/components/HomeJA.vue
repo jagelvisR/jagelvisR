@@ -1,5 +1,5 @@
 <template>
-    <section app dark>
+    <section app dark  class="aboutMe">
         <!-- Grafos efect vue-particles con css en toda la template-->
         <vue-particles
             color="#ffffff"
@@ -21,7 +21,7 @@
             >
         </vue-particles>
         <!-- Content HomeJA-->
-            <v-container grid-list-md text-xs-center>
+            <v-container grid-list-md text-xs-center >
                
                 <v-layout 
                     justify-center 
@@ -36,7 +36,6 @@
                         :tile="tile"
                         :size="avatarSize"
                         class="mt-2"
-                        color="red darken-4"
                     >
                         <img src="@/assets/jagelvisR.jpeg" alt="avatar">
                     </v-avatar>
@@ -130,6 +129,17 @@ export default {
     width: 100%;
     height: 100%;
 }
+
+ .aboutMe {
+    background-size: cover;
+    top: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 850px;
+}
+
+
 
 /*btn circulares*/
 .btn-circle {

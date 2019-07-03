@@ -12,6 +12,7 @@
               right
               color="red darken-3"
               @click="toTop"
+              class="scroll"
             >
               <v-icon>keyboard_arrow_up</v-icon>
           </v-btn>
@@ -26,21 +27,26 @@
 export default {
   name: 'App',
   data: () => ({
-    fab: false
+    fab: false,
+    duration: 300
   }),
   methods: {
     onScroll (e) {
       if (typeof window === 'undefined') return
-      const top = window.pageYOffset ||   e.target.scrollTop || 0;
-      this.fab = top > 20;
+      const top = window.pageYOffset ||   e.target.scrollTop || 0
+      this.fab = top > 20
     },
     toTop () {
-      this.$vuetify.goTo("#Home", { duration: 900 });//scroll return + duracion
+      this.$vuetify.goTo(0)
     }
   }
 };
 </script>
 
 <style scoped>
+.scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
 
 </style>

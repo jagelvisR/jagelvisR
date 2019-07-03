@@ -30,15 +30,19 @@ import VueParticles from 'vue-particles'
 Vue.use(VueParticles)
 
 
+import BackToTop from 'vue-backtotop'
+Vue.use(BackToTop)
+        
 
 Vue.config.productionTip = false
 
 new Vue({
-    router,
-    store,
-    render: h => h(App)
+  router,
+  store,
+  render: h => h(App)
 }).$mount('#app')
 
-Vue.use(Vuetify, {
-    iconfont: 'fas'
+Vue.use(Vuetify,{
+  iconfont: 'fas'
 });
+

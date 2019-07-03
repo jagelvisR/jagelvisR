@@ -31,16 +31,35 @@ export default {
   methods: {
     onScroll (e) {
       if (typeof window === 'undefined') return
-      const top = window.pageYOffset ||   e.target.scrollTop || 0;
-      this.fab = top > 20;
+      const top = window.pageYOffset ||   e.target.scrollTop || 0
+      this.fab = top > 20
     },
     toTop () {
-      this.$vuetify.goTo("#Home", { duration: 900 });//scroll return + duracion
+      this.$vuetify.goTo(0)
     }
   }
 };
 </script>
 
 <style scoped>
+
+/* css btn scroll */
+.btn-to-top {
+  width: 60px;
+  height: 60px;
+  padding: 10px 16px;
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 22px;
+}
+
+/* This is for documentation purposes and will not be needed in your application */
+  #lateral .v-speed-dial,
+  #lateral .v-btn--floating {
+    position: absolute;
+  }
+  #lateral .v-btn--floating {
+    margin: 0 0 16px 16px;
+  }
 
 </style>

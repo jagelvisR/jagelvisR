@@ -3,11 +3,11 @@
       <v-container grid-list-md fluid> 
           <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-4">Portfolio</h1>
             <v-tabs
-                v-model="active"
-                color="grey darken-4"
-                dark
-                slider-color="red darken-4"
-                fixed-tabs
+            v-model="active"
+            color="grey darken-4"
+            dark
+            slider-color="red darken-4"
+            fixed-tabs
             >
             <v-tab
                 v-for="n in 4"
@@ -24,7 +24,7 @@
                 <v-card
                     flat
                 >
-                    <v-card-text aling-center>
+                    <v-card-text>
                         <v-img :src="n.src" height="100" width="90"></v-img>
                     </v-card-text>
                 </v-card>
@@ -42,12 +42,6 @@
                     items: [
                     {
                         src: require('@/assets/vuetifyLogo.svg')
-                    },
-                    {
-                        src: require('@/assets/djangoLogo.svg')
-                    },
-                    {
-                        src: require('@/assets/vueLogo.svg')
                     }
                 ],
                 portfolios: [

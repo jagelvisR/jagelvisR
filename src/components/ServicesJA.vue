@@ -49,6 +49,24 @@
             </v-container>          
     </section>
 </template>
+<script>
+var demo_function = function(){
+    console.log(33333333)
+
+}
+var object = {}();
+object.function = function(){
+    var adadadadadadad = 1;
+    var dadadadadadada = 2;
+    console.log(1212121)
+    demo_function()
+    console.log(555555555555)
+
+
+}
+
+</script>
+
 
 <script>
     export default {

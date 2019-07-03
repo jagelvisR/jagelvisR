@@ -1,19 +1,32 @@
 <template>
-    <section id='Portfolio'>
-        <v-container grid-list-md fluid class="red darken-4">   
-            <!-- Portafolio -->
-            <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-4">Portfolio</h1>    
-            <v-layout>
-                <v-carousel>
-                    <v-carousel-item
-                    v-for="(item,i) in items"
-                    :key="i"
-                    :src="item.src"
-                    ></v-carousel-item>
-                </v-carousel>
-            </v-layout>        
-        </v-container>       
-    </section>
+  <section id="Portfolio">
+      <v-container grid-list-md fluid> 
+          <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-4">Portfolio</h1>
+            <v-tabs
+            v-model="active"
+            color="red darken-4"
+            dark
+            slider-color="red"
+            >
+            <v-tab
+                v-for="n in 3"
+                :key="n"
+                ripple
+            >
+                Item {{ n }}
+
+            </v-tab>
+            <v-tab-item
+                v-for="n in 4"
+                :key="n"
+            >
+                <v-card flat>
+                    <v-card-text>{{ text }}</v-card-text>
+                </v-card>
+            </v-tab-item>
+            </v-tabs>
+        </v-container>
+  </section>
 </template>
 
 <script>
@@ -34,7 +47,20 @@
                     {
                         src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
                     }
-                ]
+                ],
+                portfolios: [
+                    {},
+                    {},
+                    {},
+                ],
+                active: null,
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            }
+        },
+        methods: {
+            next () {
+                const active = parseInt(this.active)
+                this.active = (active < 2 ? active + 1 : 0)
             }
         }
     }

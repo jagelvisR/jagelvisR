@@ -21,7 +21,7 @@
             >
         </vue-particles>
         <!-- Content HomeJA-->
-            <v-container grid-list-md text-xs-center >
+            <v-container grid-list-md text-xs-center :src="require('@assets/descarga.png')">
                
                 <v-layout 
                     justify-center 
@@ -130,6 +130,7 @@ export default {
 
  .aboutMe {
     background-size: cover;
+    top: 20px;
     top: 0;
     left: 0;
     width: 100%;

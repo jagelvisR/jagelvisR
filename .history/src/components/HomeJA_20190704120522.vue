@@ -18,6 +18,7 @@
             :clickEffect="false"
             clickMode="push"
             class="particles-js"
+            :src="require('@assets/descarga.png')"
             >
         </vue-particles>
         <!-- Content HomeJA-->

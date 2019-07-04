@@ -1,5 +1,5 @@
 <template>
-    <section app dark  class="aboutMe">
+    <section app dark  class="aboutMe" src="require('@assets/descarga.png')">
         <!-- Grafos efect vue-particles con css en toda la template-->
         <vue-particles
             color="#ffffff"
@@ -130,6 +130,7 @@ export default {
 
  .aboutMe {
     background-size: cover;
+    top: 20px;
     top: 0;
     left: 0;
     width: 100%;

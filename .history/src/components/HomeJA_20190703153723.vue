@@ -39,7 +39,9 @@
                     >
                         <img src="@/assets/jagelvisR.jpeg" alt="avatar">
                     </v-avatar>
+                </v-flex>
                 <!-- Nombres y work-->    
+                <v-flex xs2>
                     <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-2">
                         José <b class="">Agelvis</b></h1>
                     <div class="display-1 font-weight-bold white--text text-xs-center">
@@ -57,7 +59,7 @@
                         target="_blank"
                         @click="abrirURL(`${icon.url}`)"
                         style=""
-                    >
+                        >
                             <v-icon large color="white" size="30px">{{ icon.perfil }}</v-icon>
                         </v-btn>
                     </v-flex>
@@ -71,12 +73,12 @@
                     bezier-easing-value=".5,0,.35,1"
                     >    
                     <v-btn 
-                        justify-center 
-                        wrap
-                        icon
-                        dark
-                        class="red darken-4 mt-5 scrollactive-item btn-circle btn-xl"
-                        to='#AboutMe'
+                    justify-center 
+                    wrap
+                    icon
+                    dark
+                    class="red darken-4 mt-5 scrollactive-item btn-circle btn-xl"
+                    to='#AboutMe'
                     >
                         <v-icon large color="white" size="30px">fa-angle-double-down</v-icon>
                     </v-btn>
@@ -130,6 +132,7 @@ export default {
 
  .aboutMe {
     background-size: cover;
+    top: 20px;
     top: 0;
     left: 0;
     width: 100%;

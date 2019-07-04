@@ -8,7 +8,7 @@
                 dark
                 slider-color="red darken-4"
                 fixed-tabs
-                class="mt-4"
+                class=""
             >
             <v-tab
                 v-for="n in 4"
@@ -19,18 +19,14 @@
 
             </v-tab>
             <v-tab-item
-                v-for="(item, i) in items"
+                v-for="(n, i) in items"
                 :key="i"
             >
                 <v-card
                     flat
                 >
-                    <v-card-text>
-                        <v-img 
-                            :src="item.src" 
-                            :height="item.height" 
-                            :width="item.width">
-                        </v-img>
+                    <v-card-text aling-center>
+                        <v-img :src="n.src" height="100" width="90"></v-img>
                     </v-card-text>
                 </v-card>
             </v-tab-item>
@@ -46,24 +42,13 @@
                 return {
                     items: [
                     {
-                        src: require('@/assets/vuetifyLogo.svg'),
-                        height: "250",
-                        width: "180"
+                        src: require('@/assets/vuetifyLogo.svg')
                     },
                     {
-                        src: require('@/assets/djangoLogo.svg'),
-                        height: "250",
-                        width: "250"
+                        src: require('@/assets/djangoLogo.svg')
                     },
                     {
-                        src: require('@/assets/vueLogo.svg'),
-                        height: "250",
-                        width: "250"
-                    },
-                    {
-                        src: require('@/assets/fondo.jpg'),
-                        height: "250",
-                        width: "250"
+                        src: require('@/assets/vueLogo.svg')
                     }
                 ],
                 portfolios: [

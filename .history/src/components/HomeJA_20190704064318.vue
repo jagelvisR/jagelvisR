@@ -130,6 +130,7 @@ export default {
 
  .aboutMe {
     background-size: cover;
+    top: 20px;
     top: 0;
     left: 0;
     width: 100%;

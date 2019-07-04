@@ -31,14 +31,21 @@
                     wrap
                 >
                 <v-flex xs12>
-                <!-- Avatar foto-->    
-                    <v-avatar
-                        :tile="tile"
-                        :size="avatarSize"
-                        class="mt-2"
-                    >
-                        <img src="@/assets/jagelvisR.jpeg" alt="avatar">
-                    </v-avatar>
+                <!-- Avatar foto--> 
+                    <v-progress-circular
+                        :width="5"
+                        :size="120"
+                        color="red darken-4"
+                        indeterminate
+                        >   
+                        <v-avatar
+                            :tile="tile"
+                            :size="avatarSize"
+                            class="mt-2"
+                        >
+                            <img src="@/assets/jagelvisR.jpeg" alt="avatar">
+                        </v-avatar>
+                    </v-progress-circular>    
                 <!-- Nombres y work-->    
                     <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-2">
                         José <b class="">Agelvis</b></h1>
@@ -90,6 +97,7 @@ export default {
     name: 'HomeJA',
     data: () => ({
         slider: 260,
+        slider2: 115,
         tile: false,
         icons: [
             {perfil:'fa-facebook-f', url: 'https://facebook.com/jagelvisR'},
@@ -98,12 +106,14 @@ export default {
             {perfil:'fa-github', url: 'https://github.com/jagelvisR'},
             {perfil:'fa-gitlab', url: 'https://gitlab.com/jagelvisR'},
             {perfil:'fa-linkedin', url: 'https://www.linkedin.com/in/jos%C3%A9-agelvis-34a6aa158/'},
-            ],
-                  
+            ],        
     }),
     computed: {
-      avatarSize () {
-        return `${this.slider}px`
+        avatarSize () {
+            return `${this.slider}px`
+      },
+        avatarSize2 () {
+            return `${this.slider2}px`
       },
 
     },

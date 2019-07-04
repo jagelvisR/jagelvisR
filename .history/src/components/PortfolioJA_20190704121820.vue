@@ -19,7 +19,7 @@
 
             </v-tab>
             <v-tab-item
-                v-for="(item, i) in items"
+                v-for="(n, i) in items"
                 :key="i"
             >
                 <v-card
@@ -27,9 +27,9 @@
                 >
                     <v-card-text>
                         <v-img 
-                            :src="item.src" 
-                            :height="item.height" 
-                            :width="item.width">
+                            :src="n.src" 
+                            :height="n.height" 
+                            :width="n.width">
                         </v-img>
                     </v-card-text>
                 </v-card>

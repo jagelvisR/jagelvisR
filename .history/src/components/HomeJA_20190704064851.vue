@@ -21,7 +21,7 @@
             >
         </vue-particles>
         <!-- Content HomeJA-->
-            <v-container grid-list-md text-xs-center >
+            <v-container grid-list-md text-xs-center src="require('@assets/descarga.png')">
                
                 <v-layout 
                     justify-center 

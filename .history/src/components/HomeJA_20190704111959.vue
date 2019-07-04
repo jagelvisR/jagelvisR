@@ -31,14 +31,21 @@
                     wrap
                 >
                 <v-flex xs12>
-                <!-- Avatar foto-->    
-                    <v-avatar
-                        :tile="tile"
-                        :size="avatarSize"
-                        class="mt-2"
-                    >
-                        <img src="@/assets/jagelvisR.jpeg" alt="avatar">
-                    </v-avatar>
+                <!-- Avatar foto--> 
+                    <v-progress-circular
+                        :width="5"
+                        :size="120"
+                        color="red darken-4"
+                        indeterminate
+                        >   
+                        <v-avatar
+                            :tile="tile"
+                            :size="avatarSize"
+                            class="mt-2"
+                        >
+                            <img src="@/assets/jagelvisR.jpeg" alt="avatar">
+                        </v-avatar>
+                    </v-progress-circular>    
                 <!-- Nombres y work-->    
                     <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-2">
                         José <b class="">Agelvis</b></h1>

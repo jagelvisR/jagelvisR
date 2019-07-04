@@ -39,7 +39,9 @@
                     >
                         <img src="@/assets/jagelvisR.jpeg" alt="avatar">
                     </v-avatar>
+                </v-flex>
                 <!-- Nombres y work-->    
+                <v-flex xs2>
                     <h1 class="display-2 font-weight-black white--text text-xs-center mb-2 mt-2">
                         José <b class="">Agelvis</b></h1>
                     <div class="display-1 font-weight-bold white--text text-xs-center">
@@ -130,6 +132,7 @@ export default {
 
  .aboutMe {
     background-size: cover;
+    top: 20px;
     top: 0;
     left: 0;
     width: 100%;

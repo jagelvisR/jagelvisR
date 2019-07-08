@@ -25,9 +25,7 @@
                         <v-hover>
 
                             <v-card
-                                fluid
                                 flat
-                                tile
                                 slot-scope="{ hover }"
                                 class="mx-auto"
                             >
@@ -44,37 +42,26 @@
                                     <v-expand-transition>
                                         <div
                                             v-if="hover"
-                                            class="d-flex transition-fast-in-fast-out red darken-4 v-card--reveal display-4 white--text"
+                                            class="d-flex transition-fast-in-fast-out red darken-2 v-card--reveal display-4 white--text"
                                             style="height: 100%;"
                                             icon
-                                            wrap
                                         >
-                                            <v-layout>
-                                                <v-flex 
-                                                    md2
-                                                    sm12
-                                                    lg2
-                                                    justify-center
+                                                <v-btn 
+                                                    icon
                                                     wrap
-                                                    class="mx-4"
-                                                    
-                                                    
+                                                    absolute
+                                                    v-for="(btn, i) in item.icon"
+                                                    :key="i"
                                                 >
-                                                    <!-- Sub-v-For para btn-->
-                                                    <v-btn 
-                                                        icon
-                                                        wrap
-                                                        absolute
-                                                        v-for="(btn, i) in item.icon"
-                                                        :key="i"
-                                                        class="mx-5"
-                                                    >
-                                                        <v-icon  
-                                                            size="60px">{{btn.fa}}
-                                                        </v-icon>
-                                                    </v-btn>
-                                                </v-flex>
-                                            </v-layout>
+                                                    <v-icon  
+                                                    justify-center 
+                                                    wrap 
+                                                    icon 
+                                                    color="white" 
+                                                    size="50px">{{btn.fa}}
+                                                
+                                                </v-icon>
+                                            </v-btn>
                                         </div>
                                     </v-expand-transition>
                                 </v-img>
@@ -114,12 +101,12 @@
                         height: "250",
                         width: "250",
                         alt: 'Django',
-                        icon:[
-                            { 
-                                fa:'fa-github'
-                            },
-                            
-                        ],
+                        icon:
+                            [ 
+                                'fa-github'
+                                ,
+                                'fa-gitlab'
+                            ],
                         category: 'All'
                     },
                     {

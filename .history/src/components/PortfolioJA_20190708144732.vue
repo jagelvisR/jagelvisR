@@ -44,10 +44,9 @@
                                     <v-expand-transition>
                                         <div
                                             v-if="hover"
-                                            class="d-flex transition-fast-in-fast-out red darken-4 v-card--reveal display-4 white--text"
+                                            class="d-flex transition-fast-in-fast-out red darken-2 v-card--reveal display-4 white--text"
                                             style="height: 100%;"
                                             icon
-                                            wrap
                                         >
                                             <v-layout>
                                                 <v-flex 
@@ -56,7 +55,7 @@
                                                     lg2
                                                     justify-center
                                                     wrap
-                                                    class="mx-4"
+                                                    class="mx-4 mt-1"
                                                     
                                                     
                                                 >
@@ -67,7 +66,6 @@
                                                         absolute
                                                         v-for="(btn, i) in item.icon"
                                                         :key="i"
-                                                        class="mx-5"
                                                     >
                                                         <v-icon  
                                                             size="60px">{{btn.fa}}

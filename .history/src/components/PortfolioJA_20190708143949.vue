@@ -25,9 +25,7 @@
                         <v-hover>
 
                             <v-card
-                                fluid
                                 flat
-                                tile
                                 slot-scope="{ hover }"
                                 class="mx-auto"
                             >
@@ -44,10 +42,9 @@
                                     <v-expand-transition>
                                         <div
                                             v-if="hover"
-                                            class="d-flex transition-fast-in-fast-out red darken-4 v-card--reveal display-4 white--text"
+                                            class="d-flex transition-fast-in-fast-out red darken-2 v-card--reveal display-4 white--text"
                                             style="height: 100%;"
                                             icon
-                                            wrap
                                         >
                                             <v-layout>
                                                 <v-flex 
@@ -57,20 +54,21 @@
                                                     justify-center
                                                     wrap
                                                     class="mx-4"
-                                                    
-                                                    
                                                 >
-                                                    <!-- Sub-v-For para btn-->
+                                                    <!-- Sub-For para btn-->
                                                     <v-btn 
                                                         icon
                                                         wrap
                                                         absolute
                                                         v-for="(btn, i) in item.icon"
                                                         :key="i"
-                                                        class="mx-5"
                                                     >
                                                         <v-icon  
-                                                            size="60px">{{btn.fa}}
+                                                            justify-center 
+                                                            wrap 
+                                                            icon 
+                                                            color="white" 
+                                                            size="50px">{{btn.fa}}
                                                         </v-icon>
                                                     </v-btn>
                                                 </v-flex>

@@ -44,10 +44,9 @@
                                     <v-expand-transition>
                                         <div
                                             v-if="hover"
-                                            class="d-flex transition-fast-in-fast-out red darken-4 v-card--reveal display-4 white--text"
+                                            class="d-flex transition-fast-in-fast-out red darken-2 v-card--reveal display-4 white--text"
                                             style="height: 100%;"
                                             icon
-                                            wrap
                                         >
                                             <v-layout>
                                                 <v-flex 
@@ -58,7 +57,6 @@
                                                     wrap
                                                     class="mx-4"
                                                     
-                                                    
                                                 >
                                                     <!-- Sub-v-For para btn-->
                                                     <v-btn 
@@ -67,7 +65,6 @@
                                                         absolute
                                                         v-for="(btn, i) in item.icon"
                                                         :key="i"
-                                                        class="mx-5"
                                                     >
                                                         <v-icon  
                                                             size="60px">{{btn.fa}}
@@ -170,7 +167,7 @@
 <style scoped>
 
 .v-card--reveal {
-    align-items: center;
+    /*align-items: center;*/
     bottom: 0;
     justify-content: center;
     opacity: .6;

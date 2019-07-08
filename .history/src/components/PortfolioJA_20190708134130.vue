@@ -29,15 +29,14 @@
                                 slot-scope="{ hover }"
                                 class="mx-auto"
                             >
-                                <v-card-text
-                                    v-if="item.category == 'All'"
-                                >
+                                <v-card-text>
                                     <v-img
                                         :aspect-ratio="16/9"
                                         :src="item.src" 
                                         :height="item.height" 
                                         :width="item.width"
                                         :alt="item.alt"
+                                        v-if="item.category == 'All'"
                                     >
                                     <v-expand-transition>
                                         <div
@@ -46,18 +45,19 @@
                                             style="height: 100%;"
                                             icon
                                         >
-                                                <v-btn 
-                                                    icon
-                                                    wrap
-                                                    absolute
-                                                >
-                                                    <v-icon  
+                                            <v-btn 
+                                                icon
+                                                wrap
+                                                absolute
+                                            >
+                                                <v-icon  
                                                     justify-center 
                                                     wrap 
                                                     icon 
                                                     color="white" 
-                                                    size="50px">{{item.icon[0]}}
-                                                
+                                                    size="50px"
+                                                >
+                                                    Hola
                                                 </v-icon>
                                             </v-btn>
                                         </div>
@@ -85,9 +85,15 @@
                         alt: 'Vuetify',
                         icon:
                             [ 
-                                'fa-github'
-                                ,
-                                'fa-gitlab'
+                                {
+                                    fa: 'fa-github',
+                                    url: ''
+
+                                },
+                                {
+                                    fa:'fa-gitlab', 
+                                    url
+                                }
                             ],
                         category: 'All'
 
@@ -99,10 +105,16 @@
                         alt: 'Django',
                         icon:
                             [ 
-                                'fa-github'
-                                ,
-                                'fa-gitlab'
-                            ],
+                                {
+                                    fa: 'fa-github',
+                                    url: ''
+
+                                },
+                                {
+                                    fa:'fa-gitlab', 
+                                    url
+                                }
+                            ],                        
                         category: 'All'
                     },
                     {
@@ -112,9 +124,15 @@
                         alt: 'Vue',
                         icon:
                             [ 
-                                'fa-github'
-                                ,
-                                'fa-gitlab'
+                                {
+                                    fa: 'fa-github',
+                                    url: ''
+
+                                },
+                                {
+                                    fa:'fa-gitlab', 
+                                    url
+                                }
                             ],
                         category: 'All'
                     },
@@ -125,9 +143,15 @@
                         alt: 'Code',
                         icon:
                             [ 
-                                'fa-github'
-                                ,
-                                'fa-gitlab'
+                                {
+                                    fa: 'fa-github',
+                                    url: ''
+
+                                },
+                                {
+                                    fa:'fa-gitlab', 
+                                    url
+                                }
                             ],
                         category: 'All'
                     }

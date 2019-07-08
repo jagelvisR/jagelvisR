@@ -29,15 +29,14 @@
                                 slot-scope="{ hover }"
                                 class="mx-auto"
                             >
-                                <v-card-text
-                                    v-if="item.category == 'All'"
-                                >
+                                <v-card-text>
                                     <v-img
                                         :aspect-ratio="16/9"
                                         :src="item.src" 
                                         :height="item.height" 
                                         :width="item.width"
                                         :alt="item.alt"
+                                        v-if="item.category == 'All'"
                                     >
                                     <v-expand-transition>
                                         <div
@@ -56,8 +55,8 @@
                                                     wrap 
                                                     icon 
                                                     color="white" 
-                                                    size="50px">{{item.icon[0]}}
-                                                
+                                                    size="50px">{{item.icon[i]}}
+                                                >
                                                 </v-icon>
                                             </v-btn>
                                         </div>
@@ -97,12 +96,12 @@
                         height: "250",
                         width: "250",
                         alt: 'Django',
-                        icon:
-                            [ 
-                                'fa-github'
-                                ,
-                                'fa-gitlab'
-                            ],
+                        icon: [
+                            {
+                                cod:'fa-github',
+                                url: ''
+                            }
+                        ],
                         category: 'All'
                     },
                     {
@@ -110,12 +109,12 @@
                         height: "250",
                         width: "250",
                         alt: 'Vue',
-                        icon:
-                            [ 
-                                'fa-github'
-                                ,
-                                'fa-gitlab'
-                            ],
+                        icon: [
+                            {
+                                cod:'fa-github',
+                                url: ''
+                            }
+                        ],
                         category: 'All'
                     },
                     {
@@ -123,12 +122,12 @@
                         height: "250",
                         width: "250",
                         alt: 'Code',
-                        icon:
-                            [ 
-                                'fa-github'
-                                ,
-                                'fa-gitlab'
-                            ],
+                        icon: [
+                            {
+                                cod:'fa-github',
+                                url: ''
+                            }
+                        ],
                         category: 'All'
                     }
                 ],

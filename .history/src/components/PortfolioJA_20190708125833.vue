@@ -29,44 +29,42 @@
                                 slot-scope="{ hover }"
                                 class="mx-auto"
                             >
-                                <v-card-text
-                                    v-if="item.category == 'All'"
-                                >
+                                <v-card-text>
                                     <v-img
                                         :aspect-ratio="16/9"
                                         :src="item.src" 
                                         :height="item.height" 
                                         :width="item.width"
                                         :alt="item.alt"
+                                        v-if="item.category == 'All'"
                                     >
-                                    <v-expand-transition>
-                                        <div
-                                            v-if="hover"
-                                            class="d-flex transition-fast-in-fast-out red darken-2 v-card--reveal display-4 white--text"
-                                            style="height: 100%;"
-                                            icon
-                                        >
-                                                <v-btn 
-                                                    icon
-                                                    wrap
-                                                    absolute
-                                                >
-                                                    <v-icon  
-                                                    justify-center 
-                                                    wrap 
-                                                    icon 
-                                                    color="white" 
-                                                    size="50px">{{item.icon[0]}}
-                                                
-                                                </v-icon>
-                                            </v-btn>
-                                        </div>
-                                    </v-expand-transition>
-                                </v-img>
-                            </v-card-text>
-                        </v-card>
-                    </v-hover>
-                </v-tab-item>
+                                        <v-expand-transition>
+                                <div
+                                    v-if="hover"
+                                    class="d-flex transition-fast-in-fast-out red darken-2 v-card--reveal display-4 white--text"
+                                    style="height: 100%;"
+                                    icon
+                                >
+                                <v-btn 
+                                    icon
+                                    wrap
+                                    absolute
+                                >
+                                    <v-icon  
+                                        justify-center 
+                                        wrap 
+                                        icon 
+                                        color="white" 
+                                        size="50px">{{item.icon}}
+                                    </v-icon>
+                                </v-btn>
+                                </div>
+                            </v-expand-transition>
+                        </v-img>
+                    </v-card-text>
+                </v-card>
+            </v-hover>
+            </v-tab-item>
             </v-tabs>
         </v-container>
   </section>
@@ -97,12 +95,12 @@
                         height: "250",
                         width: "250",
                         alt: 'Django',
-                        icon:
-                            [ 
-                                'fa-github'
-                                ,
-                                'fa-gitlab'
-                            ],
+                        icon: [
+                            {
+                                cod:'fa-github',
+                                url: ''
+                            }
+                        ],
                         category: 'All'
                     },
                     {
@@ -110,12 +108,12 @@
                         height: "250",
                         width: "250",
                         alt: 'Vue',
-                        icon:
-                            [ 
-                                'fa-github'
-                                ,
-                                'fa-gitlab'
-                            ],
+                        icon: [
+                            {
+                                cod:'fa-github',
+                                url: ''
+                            }
+                        ],
                         category: 'All'
                     },
                     {
@@ -123,12 +121,12 @@
                         height: "250",
                         width: "250",
                         alt: 'Code',
-                        icon:
-                            [ 
-                                'fa-github'
-                                ,
-                                'fa-gitlab'
-                            ],
+                        icon: [
+                            {
+                                cod:'fa-github',
+                                url: ''
+                            }
+                        ],
                         category: 'All'
                     }
                 ],

@@ -23,7 +23,17 @@
                                 </v-img>
                             
                             <v-card-title class="title">PROYECT</v-card-title>
-                        
+                        <div class="text-xs-left">
+                        <v-chip 
+                            v-for="(itemProyect, index) of item.icon"
+                            :key="`${index}`"
+                        >
+                            <v-avatar class="red darken-4">
+                                <v-icon size="24px">{{itemProyect.fa}}</v-icon>    
+                            </v-avatar>
+                            {{itemProyect.name}}
+                        </v-chip>
+                        </div>
                         </v-card>
                     </v-flex>
                 </v-layout>
@@ -43,10 +53,12 @@
                         alt: 'Vuetify',
                         icon:[
                             { 
-                                fa:'fa-github'
+                                fa:'fa-github',
+                                name: 'Github'
                             },
                             {    
-                                fa: 'fa-gitlab'
+                                fa: 'fa-gitlab',
+                                name: 'Gitlab'
                             }
                         ],
 
@@ -56,7 +68,8 @@
                         alt: 'Django',
                         icon:[
                             { 
-                                fa:'fa-github'
+                                fa:'fa-github',
+                                name: 'Github'
                             },
                             
                         ],
@@ -64,63 +77,91 @@
                     {
                         src: require('@/assets/vueLogo.svg'),
                         alt: 'Vue',
-                        icon:
-                            [ 
-                                'fa-github'
-                                ,
-                                'fa-gitlab'
-                            ],
+                        icon:[
+                            {    
+                                fa: 'fa-gitlab',
+                                name: 'Gitlab'
+                            },
+                            { 
+                                fa:'fa-github',
+                                name: 'Github'
+                            },
+                            { 
+                                fa:'fa-github',
+                                name: 'Github'
+                            },
+                        ],
                     },
                     {
                         src: require('@/assets/fondo.jpg'),
                         alt: 'Code',
-                        icon:
-                            [ 
-                                'fa-github'
-                                ,
-                                'fa-gitlab'
-                            ],
+                        icon:[
+                            { 
+                                fa:'fa-github',
+                                name: 'Github'
+                            },
+                            {    
+                                fa: 'fa-gitlab',
+                                name: 'Gitlab'
+                            }
+                        ],
                         category: 'All'
                     },
                     {
                         src: require('@/assets/descarga.png'),
                         alt: 'estrellas',
-                        icon:
-                            [ 
-                                'fa-github'
-                                ,
-                                'fa-gitlab'
-                            ],
+                        icon:[
+                            { 
+                                fa:'fa-github',
+                                name: 'Github'
+                            },
+                            {    
+                                fa: 'fa-gitlab',
+                                name: 'Gitlab'
+                            }
+                        ],
                     },
                     {
                         src: require('@/assets/descarga.png'),
                         alt: 'estrellas',
-                        icon:
-                            [ 
-                                'fa-github'
-                                ,
-                                'fa-gitlab'
-                            ],
+                        icon:[
+                            { 
+                                fa:'fa-github',
+                                name: 'Github'
+                            },
+                            {    
+                                fa: 'fa-gitlab',
+                                name: 'Gitlab'
+                            }
+                        ],
                     },
                     {
                         src: require('@/assets/descarga.png'),
                         alt: 'estrellas',
-                        icon:
-                            [ 
-                                'fa-github'
-                                ,
-                                'fa-gitlab'
-                            ],
+                        icon:[
+                            { 
+                                fa:'fa-github',
+                                name: 'Github'
+                            },
+                            {    
+                                fa: 'fa-gitlab',
+                                name: 'Gitlab'
+                            }
+                        ],
                     },
                     {
                         src: "https://picsum.photos/350/165?random",
                         alt: 'estrellas',
-                        icon:
-                            [ 
-                                'fa-github'
-                                ,
-                                'fa-gitlab'
-                            ],
+                        icon:[
+                            { 
+                                fa:'fa-github',
+                                name: 'Github'
+                            },
+                            {    
+                                fa: 'fa-gitlab',
+                                name: 'Gitlab'
+                            }
+                        ],
                     }                                       
 
                 ],

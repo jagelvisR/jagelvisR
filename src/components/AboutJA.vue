@@ -43,7 +43,7 @@
                 >
                   <h2 class="white--text"><b>{{ valueVue }}%</b></h2>
                   <v-img :src="require('@/assets/vueLogo.svg')" width="100"></v-img>
-                  <h4 class="white--text mt-2">Vue.js</h4>
+                  <h4 class="white--text mt-2">Vue</h4>
                 </v-progress-circular>
 
                 <v-progress-circular
@@ -57,17 +57,54 @@
                   <v-img :src="require('@/assets/jsLogo.svg')" width="100"></v-img>
                   <h4 class="white--text mt-2">JavaScript</h4>
                 </v-progress-circular>
-                
+
                 <v-progress-circular
                   :rotate="270"
                   :size="220"
                   :width="15"
-                  :value="valueLaravel"
-                  :color="'red'"
+                  :value="valueGraphQL"
+                  :color="'pink'"
                 >
-                  <h2 class="white--text"><b>{{ valueLaravel }}%</b></h2>
-                  <v-img :src="require('@/assets/laravelLogo.svg')" width="100"></v-img>
-                  <h4 class="white--text mt-2">Laravel</h4>
+                  <h2 class="white--text"><b>{{ valueGraphQL }}%</b></h2>
+                  <v-img :src="require('@/assets/graphqlLogo.svg')" width="90"></v-img>
+                  <h4 class="white--text mt-2">GraphQL</h4>
+                </v-progress-circular>
+
+                <v-progress-circular
+                  :rotate="270"
+                  :size="220"
+                  :width="15"
+                  :value="valueNodejs"
+                  :color="'light-green darken-1'"
+                >
+                  <h2 class="white--text"><b>{{ valueNodejs }}%</b></h2>
+                  <v-img :src="require('@/assets/nodejsLogo.svg')" width="85"></v-img>
+                  <h4 class="white--text mt-2">Node js</h4>
+                </v-progress-circular>
+
+                <v-progress-circular
+                  :rotate="270"
+                  :size="220"
+                  :width="15"
+                  :value="valueExpress"
+                  :color="'blue-grey darken-1'"
+                >
+                  <h2 class="white--text"><b>{{ valueExpress }}%</b></h2>
+                  <v-img :src="require('@/assets/expressLogo.svg')" width="180"></v-img>
+                  <h4 class="white--text mt-2">Express js</h4>
+                </v-progress-circular>                      
+  
+
+                <v-progress-circular
+                  :rotate="270"
+                  :size="220"
+                  :width="15"
+                  :value="valuePython"
+                  :color="'yellow darken-1'"
+                >
+                  <h2 class="white--text"><b>{{ valuePython }}%</b></h2>
+                  <v-img :src="require('@/assets/pythonLogo.svg')" width="100"></v-img>
+                  <h4 class="white--text mt-2">Python</h4>
                 </v-progress-circular>
 
                 <v-progress-circular
@@ -158,7 +195,10 @@
         valueVuetify: 0,
         valueVue: 0,
         valueJavaScript: 0,
-        valueLaravel: 0,
+        valueGraphQL: 0,
+        valueNodejs: 0,
+        valueExpress:0,
+        valuePython: 0,
         valueDjango: 0,
         valuePostgresql: 0,
         color : '',
@@ -182,8 +222,20 @@
           return (this.valueJavaScript = 65)
         }
 
-        if (this.valueLaravel === 70) {
-          return (this.valueLaravel = 70)
+        if (this.valueGraphQL === 45) {
+          return (this.valueGraphQL = 45)
+        }
+
+        if (this.valueNodejs === 60) {
+          return (this.valueNodejs = 60)
+        }
+
+        if (this.valueExpress === 50) {
+          return (this.valueExpress = 50)
+        }
+
+        if (this.valuePython === 70) {
+          return (this.valuePython = 70)
         }
 
         if (this.valueDjango === 55) {
@@ -196,15 +248,21 @@
        
           this.valueVuetify += 80;
 
-          this.valueVue += 60;
+          this.valueVue += 75;
 
           this.valueJavaScript += 65;
 
-          this.valueLaravel += 70;
+          this.valueGraphQL += 40;
+
+          this.valueNodejs += 60;
+
+          this.valueExpress += 50;
+          
+          this.valuePython += 85;
 
           this.valueDjango += 55;
 
-          this.valuePostgresql += 75;
+          this.valuePostgresql += 70;
 
       }, 1500)
     }

@@ -50,6 +50,18 @@
                   :rotate="270"
                   :size="220"
                   :width="15"
+                  :value="valueReact"
+                  :color="'light-blue accent-2'"
+                >
+                  <h2 class="white--text"><b>{{ valueReact }}%</b></h2>
+                  <v-img :src="require('@/assets/reactLogo.svg')" width="100"></v-img>
+                  <h4 class="white--text mt-2">React</h4>
+                </v-progress-circular>
+
+                <v-progress-circular
+                  :rotate="270"
+                  :size="220"
+                  :width="15"
                   :value="valueJavaScript"
                   :color="'yellow lighten-1'"
                 >
@@ -66,7 +78,7 @@
                   :color="'pink'"
                 >
                   <h2 class="white--text"><b>{{ valueGraphQL }}%</b></h2>
-                  <v-img :src="require('@/assets/graphqlLogo.svg')" width="90"></v-img>
+                  <v-img :src="require('@/assets/graphqlLogo.svg')" width="89"></v-img>
                   <h4 class="white--text mt-2">GraphQL</h4>
                 </v-progress-circular>
 
@@ -90,11 +102,12 @@
                   :color="'blue-grey darken-1'"
                 >
                   <h2 class="white--text"><b>{{ valueExpress }}%</b></h2>
-                  <v-img :src="require('@/assets/expressLogo.svg')" width="180"></v-img>
+                  <br>
+                  <v-img :src="require('@/assets/expressLogo.svg')" width="175"></v-img>
+                  <br>
                   <h4 class="white--text mt-2">Express js</h4>
                 </v-progress-circular>                      
   
-
                 <v-progress-circular
                   :rotate="270"
                   :size="220"
@@ -194,6 +207,7 @@
         interval: {},
         valueVuetify: 0,
         valueVue: 0,
+        valueReact: 0,
         valueJavaScript: 0,
         valueGraphQL: 0,
         valueNodejs: 0,
@@ -216,6 +230,10 @@
         
         if (this.valueVue === 60) {
           return (this.valueVue = 60)
+        }
+
+        if (this.valueReact === 45) {
+          return (this.valueReact = 45)
         }
 
         if (this.valueJavaScript === 65) {
@@ -249,6 +267,8 @@
           this.valueVuetify += 80;
 
           this.valueVue += 75;
+          
+          this.valueReact += 45;
 
           this.valueJavaScript += 65;
 
